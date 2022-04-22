@@ -36,7 +36,7 @@ function App() {
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
   }
-  else if (weather === null) {
+  else if (!weather) {
     return (
       <h2>Carregando o clima...</h2>
     )
