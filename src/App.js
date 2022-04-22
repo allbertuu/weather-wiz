@@ -33,7 +33,7 @@ function App() {
 
   if (location === false) {
     return (
-      <h1>Você precisa habilitar a localização no browser o/</h1>
+      <h3>Você precisa habilitar <br/>a localização no browser o/</h3>
     )
   }
   else if (!weatherData) {
