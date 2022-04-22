@@ -41,7 +41,7 @@ function App() {
       <h2>Carregando o clima...</h2>
     )
   }
-  else {
+  else if (weather !== false) {
     return (
       <div className='container'>
         <div className="title">
