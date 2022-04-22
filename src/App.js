@@ -10,8 +10,8 @@ function App() {
   const [location, setLocation] = useState(false);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(async (position) => {
-      await getWeather(position.coords.latitude, position.coords.longitude);
+    navigator.geolocation.getCurrentPosition((position) => {
+      getWeather(position.coords.latitude, position.coords.longitude);
       setLocation(true)
     })
   }, [])
@@ -36,7 +36,7 @@ function App() {
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
   }
-  else if (!weather) {
+  else if (weather === false) {
     return (
       <h2>Carregando o clima...</h2>
     )
