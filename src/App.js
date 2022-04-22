@@ -9,14 +9,14 @@ function App() {
 
   const [location, setLocation] = useState(false);
 
-  useEffect(() => {
+  useEffect(async () => {
     navigator.geolocation.getCurrentPosition((position) => {
-      getWeather(position.coords.latitude, position.coords.longitude);
+      await getWeather(position.coords.latitude, position.coords.longitude);
       setLocation(true)
     })
   }, [])
 
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState(false);
 
   let getWeather = async (lat, long) => {
     let res = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
@@ -36,11 +36,11 @@ function App() {
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
   }
-  /*else if (!weather) {
+  else if (!weather) {
     return (
       <h2>Carregando o clima...</h2>
     )
-  }*/
+  }
   else {
     return (
       <div className='container'>
