@@ -36,11 +36,11 @@ function App() {
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
   }
-  else if (!weather) {
+  /*else if (!weather) {
     return (
       <h2>Carregando o clima...</h2>
     )
-  }
+  }*/
   else {
     return (
       <div className='container'>
