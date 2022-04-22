@@ -16,7 +16,7 @@ function App() {
     })
   }, [])
 
-  const [weather, setWeather] = useState(false);
+  const [weather, setWeather] = useState(null);
 
   let getWeather = async (lat, long) => {
     let res = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
@@ -36,12 +36,12 @@ function App() {
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
   }
-  else if (weather === false) {
+  else if (weather === null) {
     return (
       <h2>Carregando o clima...</h2>
     )
   }
-  else if (weather !== false) {
+  else {
     return (
       <div className='container'>
         <div className="title">
