@@ -31,7 +31,8 @@ function App() {
     setWeather(res.data);
   }
 
-  if (location === false) {
+  return (
+     if (location === false) {
     return (
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
@@ -61,5 +62,6 @@ function App() {
       </div>
     );
   }
+  )
 }
 export default App;
