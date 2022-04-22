@@ -9,8 +9,8 @@ function App() {
 
   const [location, setLocation] = useState(false);
 
-  useEffect(async () => {
-    navigator.geolocation.getCurrentPosition((position) => {
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(async (position) => {
       await getWeather(position.coords.latitude, position.coords.longitude);
       setLocation(true)
     })
