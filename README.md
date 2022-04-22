@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+![GitHub repo size](https://img.shields.io/github/repo-size/allbertuu/sneakers?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/allbertuu/sneakers?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/allbertuu/sneakers?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/allbertuu/sneakers?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/allbertuu/sneakers?style=for-the-badge)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# E-commerce product page solution 📱
 
-## Available Scripts
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-In the project directory, you can run:
+## Table of contents
 
-### `yarn start`
+- [Overview](#overview)
+  - [The challenge](#the-challenge-)
+  - [Screenshot](#screenshot-)
+  - [Links](#links-)
+- [My process](#my-process-)
+  - [Built with](#built-with-)
+  - [What I learned](#what-i-learned-)
+  - [Continued development](#continued-development-)
+  - [Useful resources](#useful-resources-)
+- [Author](#author-%EF%B8%8F)
+- [Acknowledgments](#acknowledgments-)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge ⚡
 
-### `yarn test`
+Users should be able to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
 
-### `yarn build`
+### Screenshot 📷
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Main image of website](./screenshot.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links 🚀
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Solution URL: [Access solution page here!](https://www.frontendmentor.io/solutions/ecommerce-product-page-using-react-and-tailwindcss-visDH7ugd)
+- Live Site URL: [Access here!](https://sneakers-allbertuu.vercel.app/)
 
-### `yarn eject`
+## My process 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Built with ⚙
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- TailwindCSS framework
+- Sass pre-processor
+- Mobile-first workflow
+- MUI React icons lib
+- [React](https://reactjs.org/) - JS library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What I learned 📚
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> **General development**: 
+>- CRUD
+>- Fetch API
 
-## Learn More
+#### CSS
+- Using the order property - flexbox  
+- More knowledge about building responsive websites
+- Changing the color of elements that has been highlighted by the user
+- Elegant animations of elements
+#### HTML
+- Improvement of my thinking logic in building the website structure right at the beginning of the entire building process  
+#### JavaScript
+- Creating a modal with pure javascript
+- Creating a custom adjust price with javascript function
+#### React.js
+- Using map loop for create dynamic elements
+- Using CSS Modules to style individual components (without having a CSS Global) 
+- Using React Hook _useToggle_ (very useful)
+- Components with conditional styles
+- Creating custom Hooks
+- Using React Context
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Continued development 🎯
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Refine my knowledge of create responsive pages
+- Create modals more easily, elegant and smooth.
 
-### Code Splitting
+### Useful resources ✨
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) - This helped me to viewing my page on different screens at once. I really liked this extension and I think you too.
+- I liked so much [this post](https://dev.to/gitanshu_choudhary/crud-operations-in-modern-javascript-379e) about CRUD operations and the logic around it. It helped me to understanding more and better about that subject.
 
-### Analyzing the Bundle Size
+## Author 🙎🏻‍♂️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- - Website - [Add your name here](https://www.your-site.com) -->
+- Frontend Mentor - [@allbertuu](https://www.frontendmentor.io/profile/allbertuu)
+- LinkedIn - [Alberto Albuquerque](https://www.linkedin.com/in/albertov-albuquerque/)
 
-### Making a Progressive Web App
+## Acknowledgments ⭐
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I'm so thankful for [Iuri Silva](https://github.com/iuricode), that helped me a lot with his posts about web programming and some tips related.  
+Thank to [SatellaSoft](https://www.youtube.com/watch?v=NXdjf6GJSKo&ab_channel=SatellaSoft) and your channel on YouTube, where I learned how to create a modal with only pure javascript. 
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Back to the 🔝](#e-commerce-product-page-solution-)

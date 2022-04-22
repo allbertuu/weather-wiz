@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-size: 1.1rem;
+  background: linear-gradient(to bottom, rgb(28, 34, 46), rgb(20, 24, 32)) no-repeat center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  padding: 0 1.2rem;
+}
+
+.card {
+  color: rgb(28, 34, 46);
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.493);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+
+  min-width: 350px;
+  max-width: 500px;
+  padding: 1.5rem;
+}
+
+.card h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.title {
+  display:flex;
+  align-items: center;
   color: white;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title h1 {
 }
