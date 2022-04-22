@@ -49,12 +49,18 @@ body {
   list-style: none;
 }
 
+.header {
+  display:flex;
+  flex-direction: column;
+}
+
+small {
+  text-align: center;
+}
+
 .title {
   display:flex;
   align-items: center;
   color: white;
   gap: 1rem;
-}
-
-.title h1 {
 }

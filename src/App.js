@@ -16,7 +16,7 @@ function App() {
     })
   }, [])
 
-  const [weather, setWeather] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
 
   let getWeather = async (lat, long) => {
     let res = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
@@ -28,7 +28,7 @@ function App() {
         units: 'metric'
       }
     });
-    setWeather(res.data);
+    setWeatherData(res.data);
   }
 
   if (location === false) {
@@ -36,7 +36,7 @@ function App() {
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
   }
-  else if (!weather) {
+  else if (!weatherData) {
     return (
       <h2>Carregando o clima...</h2>
     )
@@ -44,18 +44,21 @@ function App() {
   else {
     return (
       <div className='container'>
-        <div className="title">
-          <h1>Seu clima</h1>
-          <CloudIcon fontSize="large" />
+        <div className="header">
+          <div className="title">
+            <h1>Seu clima</h1>
+            <CloudIcon fontSize="large" />
+          </div>
+          <small>Localização: <i>{weatherData['name']}</i></small>
         </div>
         <div className='card'>
-          <h2>{weather['weather'][0]['description']}</h2>
+          <h2>{weatherData['weather'][0]['description']}</h2>
           <ul>
-            <li>Temperatura atual: {weather['main']['temp']}°</li>
-            <li>Temperatura máxima: {weather['main']['temp_max']}°</li>
-            <li>Temperatura minima: {weather['main']['temp_min']}°</li>
-            <li>Pressão: {weather['main']['pressure']} hpa</li>
-            <li>Umidade: {weather['main']['humidity']}%</li>
+            <li>Temperatura atual: {weatherData['main']['temp']}°</li>
+            <li>Temperatura máxima: {weatherData['main']['temp_max']}°</li>
+            <li>Temperatura minima: {weatherData['main']['temp_min']}°</li>
+            <li>Pressão: {weatherData['main']['pressure']} hpa</li>
+            <li>Umidade: {weatherData['main']['humidity']}%</li>
           </ul>
         </div>
       </div>
