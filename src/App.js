@@ -16,10 +16,10 @@ function App() {
     })
   }, [])
 
-  const [weather, setWeather] = useState(false);
+  const [weather, setWeather] = useState(null);
 
   let getWeather = async (lat, long) => {
-    let res = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
+    let res = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
       params: {
         lat: lat,
         lon: long,
@@ -31,13 +31,12 @@ function App() {
     setWeather(res.data);
   }
 
-  return (
-     if (location === false) {
+  if (location === false) {
     return (
       <h1>Você precisa habilitar a localização no browser o/</h1>
     )
   }
-  else if (weather === false) {
+  else if (!weather) {
     return (
       <h2>Carregando o clima...</h2>
     )
@@ -62,6 +61,5 @@ function App() {
       </div>
     );
   }
-  )
 }
 export default App;
