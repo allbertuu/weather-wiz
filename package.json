@@ -40,5 +40,27 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "React Web App for viewing your local weather information",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allbertuu/weather-location.git"
+  },
+  "keywords": [
+    "weather",
+    "weather-location",
+    "rainy",
+    "sunny",
+    "card",
+    "openweathermap",
+    "API consuming"
+  ],
+  "author": "Alberto Albuquerque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allbertuu/weather-location/issues"
+  },
+  "homepage": "https://github.com/allbertuu/weather-location#readme"
 }
