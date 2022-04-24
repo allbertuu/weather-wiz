@@ -4,6 +4,7 @@
 # Weather location React APP 🌦
 
 This is a project of the course by OneBitCode, focused in API consuming.
+> I spent: 6 hours (without count the breaks) to finish this project 
 
 ## Table of contents
 
