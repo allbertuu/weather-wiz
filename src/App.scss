@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.3rem;
+  background: url("./assets/imgs/day.jpg") no-repeat center top;
+  font-family: "Poppins", sans-serif;
+  color: rgb(169 169 169);
+
+  // Page
+  .container {
+    background-color: rgba(255, 255, 255, 0.178);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+    padding: 0 1.2rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #d5c2ab;
+  }
+
+  small {
+    text-align: center;
+  }
+
+  .card {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.493);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+
+    min-width: 350px;
+    max-width: 500px;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+      }
+    }
+  }
+
+  &.night {
+    background: url("./assets/imgs/night.jpg") no-repeat center top;
+
+    .title, small {
+      color: #e1e1e1;
+    }
+
+    .card {
+      color: rgb(61 76 81);
+    }
+  }
+}
+
+// Media querys
+@media (max-width: 640px) {
+  body {
+    font-size: 1.1rem;
+  }
+}
