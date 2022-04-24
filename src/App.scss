@@ -72,13 +72,19 @@ body {
 
   &.night {
     background: url("./assets/imgs/night.jpg") no-repeat center top;
+    background-size: cover;
+    color: white;
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.466);
+    }
 
     .title, small {
-      color: #e1e1e1;
+      color: white;
     }
 
     .card {
-      color: rgb(61 76 81);
+      color: rgb(9 19 21);
     }
   }
 }
