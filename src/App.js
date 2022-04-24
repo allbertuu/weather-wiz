@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 // icons 
 import { CloudIcon, WaterIcon, ThermostatIcon, ArrowUpIcon, ArrowDownIcon, DoubleArrowDownIcon } from './assets/icons';
 // styles
-import './App.css';
+import './App.scss';
+// scripts
+import './assets/scripts/main';
+import { handleBodyStyles } from './assets/scripts/main';
 
 function App() {
 
   const [location, setLocation] = useState(false);
 
   useEffect(() => {
+    handleBodyStyles();
+
     navigator.geolocation.getCurrentPosition((position) => {
       getWeather(position.coords.latitude, position.coords.longitude);
       setLocation(true)
@@ -33,12 +39,16 @@ function App() {
 
   if (location === false) {
     return (
-      <h3>Você precisa habilitar <br />a localização no browser o/</h3>
+      <div className="container">
+        <h3>Você precisa habilitar <br />a localização no browser o/</h3>
+      </div>
     )
   }
   else if (!weatherData) {
     return (
-      <h2>Carregando o clima...</h2>
+      <div className="container">
+        <h2>Carregando o clima...</h2>
+      </div>
     )
   }
   else {
@@ -49,7 +59,11 @@ function App() {
             <h1>Seu clima</h1>
             <CloudIcon fontSize="large" />
           </div>
-          <small>Localização: <i>{weatherData['name']}</i></small>
+          <small>
+            Localização: <i>{weatherData['name']}</i>
+            <div className="separator"></div>
+            Horário: {moment().format('LT')}
+          </small>
         </div>
         <div className='card'>
           <h2>{weatherData['weather'][0]['description']}</h2>
