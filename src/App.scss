@@ -9,8 +9,9 @@
 body {
   font-size: 1.3rem;
   background: url("./assets/imgs/day.jpg") no-repeat center top;
+  background-size: cover;
   font-family: "Poppins", sans-serif;
-  color: rgb(169 169 169);
+  color: white;
 
   // Page
   .container {
@@ -33,14 +34,17 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: #d5c2ab;
+    color: #d3a880;
   }
 
   small {
     text-align: center;
+    color: #787676;
   }
 
   .card {
+    color: #a3a3a3;
+
     backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(255, 255, 255, 0.493);
     border-radius: 12px;
@@ -73,7 +77,6 @@ body {
   &.night {
     background: url("./assets/imgs/night.jpg") no-repeat center top;
     background-size: cover;
-    color: white;
 
     .container {
       background-color: rgba(0, 0, 0, 0.466);
