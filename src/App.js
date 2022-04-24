@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 // icons 
 import CloudIcon from '@mui/icons-material/Cloud';
+import WaterIcon from '@mui/icons-material/Water';
+import ThermostatIcon from '@mui/icons-material/Thermostat';
 // styles
 import './App.css';
 
@@ -54,11 +56,11 @@ function App() {
         <div className='card'>
           <h2>{weatherData['weather'][0]['description']}</h2>
           <ul>
-            <li>Temperatura atual: {weatherData['main']['temp']}°</li>
+            <li><ThermostatIcon/>Temperatura atual: {weatherData['main']['temp']}°</li>
             <li>Temperatura máxima: {weatherData['main']['temp_max']}°</li>
             <li>Temperatura minima: {weatherData['main']['temp_min']}°</li>
             <li>Pressão: {weatherData['main']['pressure']} hpa</li>
-            <li>Umidade: {weatherData['main']['humidity']}%</li>
+            <li><WaterIcon/>Umidade: {weatherData['main']['humidity']}%</li>
           </ul>
         </div>
       </div>
