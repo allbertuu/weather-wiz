@@ -31,6 +31,7 @@ I learned/practiced how to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- SCSS
 - Flexbox
 - Mobile-first workflow
 - MUI React icons lib
@@ -40,8 +41,9 @@ I learned/practiced how to:
 
 #### General
 - Fetch APIs using Axios
-#### CSS
+#### CSS (SCSS)
 - Glassmorphism effect
+- Change the whole theme of the page based on JS scripts and their logics
 
 ## Author 🙎🏻‍♂️
 <!-- - Website - [Add your name here](https://www.your-site.com) -->
