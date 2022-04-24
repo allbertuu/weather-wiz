@@ -21,7 +21,7 @@ export function handleBodyStyles() {
   let timeFormat = getTimeFormatAM_PM();
   
   if(timeFormat === 'PM') {
-    if(hour >= '2') {
+    if(hour >= '6') {
       body.className = 'night';
     }
   }
