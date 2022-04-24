@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 // icons 
-import CloudIcon from '@mui/icons-material/Cloud';
-import WaterIcon from '@mui/icons-material/Water';
-import ThermostatIcon from '@mui/icons-material/Thermostat';
+import { CloudIcon, WaterIcon, ThermostatIcon, ArrowUpIcon, ArrowDownIcon, DoubleArrowDownIcon } from './assets/icons';
 // styles
 import './App.css';
 
@@ -35,7 +33,7 @@ function App() {
 
   if (location === false) {
     return (
-      <h3>Você precisa habilitar <br/>a localização no browser o/</h3>
+      <h3>Você precisa habilitar <br />a localização no browser o/</h3>
     )
   }
   else if (!weatherData) {
@@ -56,11 +54,11 @@ function App() {
         <div className='card'>
           <h2>{weatherData['weather'][0]['description']}</h2>
           <ul>
-            <li><ThermostatIcon/>Temperatura atual: {weatherData['main']['temp']}°</li>
-            <li>Temperatura máxima: {weatherData['main']['temp_max']}°</li>
-            <li>Temperatura minima: {weatherData['main']['temp_min']}°</li>
-            <li>Pressão: {weatherData['main']['pressure']} hpa</li>
-            <li><WaterIcon/>Umidade: {weatherData['main']['humidity']}%</li>
+            <li><ThermostatIcon fontSize='inherit' />Temperatura atual: {weatherData['main']['temp']}°</li>
+            <li><ArrowUpIcon fontSize='inherit' />Temperatura máxima: {weatherData['main']['temp_max']}°</li>
+            <li><ArrowDownIcon fontSize='inherit' />Temperatura minima: {weatherData['main']['temp_min']}°</li>
+            <li><DoubleArrowDownIcon fontSize='inherit' />Pressão: {weatherData['main']['pressure']} hpa</li>
+            <li><WaterIcon fontSize='inherit' />Umidade: {weatherData['main']['humidity']}%</li>
           </ul>
         </div>
       </div>

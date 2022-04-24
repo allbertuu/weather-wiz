@@ -38,6 +38,10 @@ body {
   min-width: 350px;
   max-width: 500px;
   padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 
 .card h2 {
@@ -47,6 +51,12 @@ body {
 
 .card ul {
   list-style: none;
+}
+
+.card ul li {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
 }
 
 .header {

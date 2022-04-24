@@ -41,7 +41,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "React Web App for viewing your local weather information",
+  "description": "App para ver sua localização meteorológica",
   "main": "index.js",
   "devDependencies": {},
   "repository": {
@@ -50,12 +50,7 @@
   },
   "keywords": [
     "weather",
-    "weather-location",
-    "rainy",
-    "sunny",
-    "card",
-    "openweathermap",
-    "API consuming"
+    "weather-location"
   ],
   "author": "Alberto Albuquerque",
   "license": "ISC",
