@@ -19,15 +19,15 @@ function getHour() {
 export function handleBodyStyles() {
   let hour = getHour();
   let timeFormat = getTimeFormatAM_PM();
-  
-  if(timeFormat === 'PM') {
-    if(hour >= '6') {
+
+  if (timeFormat === 'PM') {
+    if (hour >= '6') {
       body.className = 'night';
     }
   }
-  else {
+  else if (timeFormat === 'AM') {
     if(hour >= '6') {
-      body.classList.remove('night');
-    }
+    body.classList.remove('night');
   }
+}
 }
