@@ -6,8 +6,11 @@
   box-sizing: border-box;
 }
 
+$text-md: 1.3rem;
+$text-base: 1rem;
+
 body {
-  font-size: 1.3rem;
+  font-size: $text-md;
   background: url("./assets/imgs/day.jpg") no-repeat center top;
   background-size: cover;
   font-family: "Poppins", sans-serif;
@@ -56,7 +59,7 @@ body {
 
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: .5rem;
 
     h2 {
       text-align: center;
@@ -69,7 +72,13 @@ body {
       li {
         display: flex;
         align-items: center;
-        gap: 0.2rem;
+        gap: .2rem;
+      }
+
+      :nth-child(n+2):nth-child(-n+4) {
+        font-size: 80%;
+        padding-left: .2rem;
+        gap: .4rem;
       }
     }
   }
@@ -95,6 +104,6 @@ body {
 // Media querys
 @media (max-width: 640px) {
   body {
-    font-size: 1.1rem;
+    font-size: $text-base;
   }
 }

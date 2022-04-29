@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 // icons 
-import { CloudIcon, WaterIcon, ThermostatIcon, ArrowUpIcon, ArrowDownIcon, DoubleArrowDownIcon } from './assets/icons';
+import { CloudIcon, WaterIcon, ThermostatIcon, ArrowUpIcon, ArrowDownIcon, DoubleArrowDownIcon, EmojiIcon, SpeedIcon } from './assets/icons';
 // styles
 import './App.scss';
 // scripts
@@ -71,7 +71,9 @@ function App() {
             <li><ThermostatIcon fontSize='inherit' />Temperatura atual: {weatherData['main']['temp']}°</li>
             <li><ArrowUpIcon fontSize='inherit' />Temperatura máxima: {weatherData['main']['temp_max']}°</li>
             <li><ArrowDownIcon fontSize='inherit' />Temperatura minima: {weatherData['main']['temp_min']}°</li>
+            <li><EmojiIcon fontSize='inherit' />Sensação térmica: {weatherData['main']['feels_like']}°</li>
             <li><DoubleArrowDownIcon fontSize='inherit' />Pressão: {weatherData['main']['pressure']} hpa</li>
+            <li><SpeedIcon fontSize='inherit' />Velocidade do vento: {weatherData['wind']['speed']} m/s</li>
             <li><WaterIcon fontSize='inherit' />Umidade: {weatherData['main']['humidity']}%</li>
           </ul>
         </div>
