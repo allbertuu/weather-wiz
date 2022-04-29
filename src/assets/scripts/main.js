@@ -26,8 +26,11 @@ export function handleBodyStyles() {
     }
   }
   else if (timeFormat === 'AM') {
-    if(hour >= '6') {
-    body.classList.remove('night');
+    if (hour < '6') {
+      body.className = 'night';
+    }
+    else if (hour >= '6') {
+      body.classList.remove('night');
+    }
   }
-}
 }
