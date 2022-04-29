@@ -24,8 +24,8 @@ function App() {
 
   const [weatherData, setWeatherData] = useState(null);
 
-  let getWeather = async (lat, long) => {
-    let res = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
+  const getWeather = async (lat, long) => {
+    const res = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
       params: {
         lat: lat,
         lon: long,
