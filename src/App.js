@@ -37,6 +37,9 @@ function App() {
     setWeatherData(res.data);
   }
 
+  const dayOfWeekABBR = moment().format('dddd').slice(0, 3);
+  const dayOfWeek = moment().format('dddd');
+
   if (location === false) {
     return (
       <div className="container">
@@ -62,7 +65,7 @@ function App() {
           <small>
             Localização: <i>{weatherData['name']}</i>
             <div className="separator"></div>
-            Horário: {moment().format('LT')}
+            Horário: {moment().format('LT')}, <abbr title={dayOfWeek}>{dayOfWeekABBR}</abbr>
           </small>
         </div>
         <div className='card'>
