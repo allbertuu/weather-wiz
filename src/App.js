@@ -5,7 +5,7 @@ import { CloudIcon, WaterIcon, ThermostatIcon, ArrowUpIcon, ArrowDownIcon, Doubl
 // styles
 import './App.scss';
 // scripts
-import { handleBodyStyles, currentTime, dayOfWeek, dayOfWeekABBR } from './assets/scripts/main';
+import { handleBodyStyles, currentTime, dayOfTheWeek, dayOfTheWeekABBR } from './assets/scripts/main';
 
 function App() {
 
@@ -65,7 +65,7 @@ function App() {
           <small>
             Localização: <i>{weatherData.name}</i>
             <br />
-            Horário: {currentTime}, <abbr title={dayOfWeek}>{dayOfWeekABBR}</abbr>
+            Horário: {currentTime}, <abbr title={dayOfTheWeek}>{dayOfTheWeekABBR}</abbr>
           </small>
         </div>
         <div className='card'>

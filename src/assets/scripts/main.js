@@ -3,8 +3,8 @@ import moment from 'moment';
 let body = document.body;
 
 export const currentTime = moment().format('LT');
-export const dayOfWeekABBR = moment().format('dddd').slice(0, 3);
-export const dayOfWeek = moment().format('dddd');
+export const dayOfTheWeekABBR = moment().format('dddd').slice(0, 3);
+export const dayOfTheWeek = moment().format('dddd');
 
 function getTimeFormatAM_PM() {
   let lastIndex = currentTime[currentTime.length - 1];
