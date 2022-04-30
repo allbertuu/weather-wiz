@@ -64,7 +64,7 @@ function App() {
           </div>
           <small>
             Localização: <i>{weatherData.name}</i>
-            <div className="separator"></div>
+            <br />
             Horário: {currentTime}, <abbr title={dayOfWeek}>{dayOfWeekABBR}</abbr>
           </small>
         </div>
