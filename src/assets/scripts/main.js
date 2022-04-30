@@ -2,7 +2,9 @@ import moment from 'moment';
 
 let body = document.body;
 
-let currentTime = moment().format('LT');
+export const currentTime = moment().format('LT');
+export const dayOfWeekABBR = moment().format('dddd').slice(0, 3);
+export const dayOfWeek = moment().format('dddd');
 
 function getTimeFormatAM_PM() {
   let lastIndex = currentTime[currentTime.length - 1];

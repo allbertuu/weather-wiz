@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import moment from 'moment';
 // icons 
 import { CloudIcon, WaterIcon, ThermostatIcon, ArrowUpIcon, ArrowDownIcon, DoubleArrowDownIcon, EmojiIcon, SpeedIcon } from './assets/icons';
 // styles
 import './App.scss';
 // scripts
-import { handleBodyStyles } from './assets/scripts/main';
+import { handleBodyStyles, currentTime, dayOfWeek, dayOfWeekABBR } from './assets/scripts/main';
 
 function App() {
 
@@ -36,9 +35,6 @@ function App() {
     setWeatherData(res.data);
   }
 
-  const dayOfWeekABBR = moment().format('dddd').slice(0, 3);
-  const dayOfWeek = moment().format('dddd');
-
   if (location === false) {
     return (
       <div className="container">
@@ -64,7 +60,7 @@ function App() {
           <small>
             Localização: <i>{weatherData['name']}</i>
             <div className="separator"></div>
-            Horário: {moment().format('LT')}, <abbr title={dayOfWeek}>{dayOfWeekABBR}</abbr>
+            Horário: {currentTime}, <abbr title={dayOfWeek}>{dayOfWeekABBR}</abbr>
           </small>
         </div>
         <div className='card'>
