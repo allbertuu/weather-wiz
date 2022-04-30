@@ -35,6 +35,11 @@ function App() {
     setWeatherData(res.data);
   }
 
+  function convertMSToKmH(metersBySec) {
+    const converted = Math.round(metersBySec * 3.6);
+    return converted;
+  }
+
   if (location === false) {
     return (
       <div className="container">
@@ -58,21 +63,21 @@ function App() {
             <CloudIcon fontSize="large" />
           </div>
           <small>
-            Localização: <i>{weatherData['name']}</i>
+            Localização: <i>{weatherData.name}</i>
             <div className="separator"></div>
             Horário: {currentTime}, <abbr title={dayOfWeek}>{dayOfWeekABBR}</abbr>
           </small>
         </div>
         <div className='card'>
-          <h2>{weatherData['weather'][0]['description']}</h2>
+          <h2>{weatherData.weather[0].description}</h2>
           <ul>
-            <li><ThermostatIcon fontSize='inherit' />Temperatura atual: {weatherData['main']['temp']}°</li>
-            <li><ArrowUpIcon fontSize='inherit' />Temperatura máxima: {weatherData['main']['temp_max']}°</li>
-            <li><ArrowDownIcon fontSize='inherit' />Temperatura minima: {weatherData['main']['temp_min']}°</li>
-            <li><EmojiIcon fontSize='inherit' />Sensação térmica: {weatherData['main']['feels_like']}°</li>
-            <li><DoubleArrowDownIcon fontSize='inherit' />Pressão: {weatherData['main']['pressure']} hpa</li>
-            <li><SpeedIcon fontSize='inherit' />Velocidade do vento: {weatherData['wind']['speed']} m/s</li>
-            <li><WaterIcon fontSize='inherit' />Umidade: {weatherData['main']['humidity']}%</li>
+            <li><ThermostatIcon fontSize='inherit' />Temperatura atual: {weatherData.main.temp}°</li>
+            <li><ArrowUpIcon fontSize='inherit' />Temperatura máxima: {weatherData.main.temp_max}°</li>
+            <li><ArrowDownIcon fontSize='inherit' />Temperatura minima: {weatherData.main.temp_min}°</li>
+            <li><EmojiIcon fontSize='inherit' />Sensação térmica: {weatherData.main.feels_like}°</li>
+            <li><DoubleArrowDownIcon fontSize='inherit' />Pressão: {weatherData.main.pressure} hpa</li>
+            <li><SpeedIcon fontSize='inherit' />Velocidade do vento: {convertMSToKmH(weatherData.wind.speed)} km/h</li>
+            <li><WaterIcon fontSize='inherit' />Umidade: {weatherData.main.humidity}%</li>
           </ul>
         </div>
       </div>
