@@ -6,7 +6,6 @@ import { CloudIcon, WaterIcon, ThermostatIcon, ArrowUpIcon, ArrowDownIcon, Doubl
 // styles
 import './App.scss';
 // scripts
-import './assets/scripts/main';
 import { handleBodyStyles } from './assets/scripts/main';
 
 function App() {
