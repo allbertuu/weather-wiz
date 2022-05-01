@@ -2,9 +2,32 @@ import moment from 'moment';
 
 let body = document.body;
 
+function translateDayOfTheWeek(dayOfTheWeek = "") {
+  switch (dayOfTheWeek) {
+    case "Sunday":
+      return "Domingo"
+    case "Monday":
+      return "Segunda"
+    case "Tuesday":
+      return "Terça"
+    case "Wednesday":
+      return "Quarta"
+    case "Thursday":
+      return "Quinta"
+    case "Friday":
+      return "Sexta"
+    case "Saturday":
+      return "Sábado";
+    default:
+      return "Don't have found any day to translate"
+  }
+}
+
+const translatedDayOfWeek = translateDayOfTheWeek(moment().format('dddd'));
+
 export const currentTime = moment().format('LT');
-export const dayOfTheWeekABBR = moment().format('dddd').slice(0, 3);
-export const dayOfTheWeek = moment().format('dddd');
+export const dayOfTheWeekABBR = translatedDayOfWeek.slice(0, 3);
+export const dayOfTheWeek = translatedDayOfWeek;
 
 function getTimeFormatAM_PM() {
   let lastIndex = currentTime[currentTime.length - 1];
