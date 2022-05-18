@@ -3,7 +3,7 @@
 
 # Weather location React APP 🌦
 
-This is a project of the course by OneBitCode, focused in API consuming.
+This is a project of the course by OneBitCode, focused in consume an API.
 > I spent: 6 hours (without count the breaks) to finish this project 
 
 ## Table of contents
@@ -47,7 +47,7 @@ I learned/practiced how to:
 - Change the whole theme of the page based on JS scripts and their logics
 
 ## Author 🙎🏻‍♂️
-<!-- - Website - [Add your name here](https://www.your-site.com) -->
+- Website - [Alberto Albuquerque](https://portfolio-allbertuu.vercel.app/)
 - Frontend Mentor - [@allbertuu](https://www.frontendmentor.io/profile/allbertuu)
 - LinkedIn - [Alberto Albuquerque](https://www.linkedin.com/in/albertov-albuquerque/)
 
