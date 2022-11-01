@@ -1,21 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-$text-md: 1.3rem;
-$text-base: 1rem;
-
 body {
-  font-size: $text-md;
-  background: url("./assets/imgs/day.jpg") no-repeat center top;
-  background-size: cover;
-  font-family: "Poppins", sans-serif;
-  color: white;
-
   // Page
   .container {
     background-color: rgba(255, 255, 255, 0.178);

@@ -1,3 +1,4 @@
+import { CaretDoubleDown, Cloud, Drop, Thermometer, ThermometerCold, ThermometerHot, Wind } from "phosphor-react";
 import { useState, useEffect } from "react";
 // icons
 // import {
@@ -20,12 +21,13 @@ import "./App.css";
 //     dayOfTheWeekABBR,
 // } from "./assetsasd/scripts/main";
 import { openWeatherAPI } from "./services/api";
+import { convertMSToKmH } from "./utils";
 
 function App() {
     const [location, setLocation] = useState(false);
 
     useEffect(() => {
-        handleBodyStyles();
+        // handleBodyStyles();
 
         navigator.geolocation.getCurrentPosition((position) => {
             getWeather(position.coords.latitude, position.coords.longitude);
@@ -33,10 +35,10 @@ function App() {
         });
     }, []);
 
-    const [weatherData, setWeatherData] = useState(null);
+    const [weatherData, setWeatherData] = useState<any | null>(null);
 
-    const getWeather = async (lat, long) => {
-        const res = await API.get("/", {
+    const getWeather = async (lat: number, long: number) => {
+        const res = await openWeatherAPI.get("/", {
             params: {
                 lat: lat,
                 lon: long,
@@ -65,45 +67,45 @@ function App() {
                 <div className="header">
                     <div className="title">
                         <h1>Seu clima</h1>
-                        <CloudIcon fontSize="large" />
+                        <Cloud size={32} />
                     </div>
                     <small>
                         Localização: <i>{weatherData.name}</i>
                         <br />
-                        Horário: {currentTime},{" "}
-                        <abbr title={dayOfTheWeek}>{dayOfTheWeekABBR}</abbr>
+                        {/* Horário: {currentTime},{" "}
+                        <abbr title={dayOfTheWeek}>{dayOfTheWeekABBR}</abbr> */}
                     </small>
                 </div>
                 <div className="card">
                     <h2>{weatherData.weather[0].description}</h2>
                     <ul>
                         <li>
-                            <ThermostatIcon fontSize="inherit" />
+                            <Thermometer size={16} />
                             Temperatura atual: {weatherData.main.temp}°
                         </li>
                         <li>
-                            <ArrowUpIcon fontSize="inherit" />
+                            <ThermometerHot size={32} />
                             Temperatura máxima: {weatherData.main.temp_max}°
                         </li>
                         <li>
-                            <ArrowDownIcon fontSize="inherit" />
+                            <ThermometerCold size={32} />
                             Temperatura minima: {weatherData.main.temp_min}°
                         </li>
                         <li>
-                            <EmojiIcon fontSize="inherit" />
+                            <Wind size={32} />
                             Sensação térmica: {weatherData.main.feels_like}°
                         </li>
                         <li>
-                            <DoubleArrowDownIcon fontSize="inherit" />
+                            <CaretDoubleDown size={32} />
                             Pressão: {weatherData.main.pressure} hpa
                         </li>
                         <li>
-                            <SpeedIcon fontSize="inherit" />
+                            <Wind size={32} />
                             Velocidade do vento:{" "}
                             {convertMSToKmH(weatherData.wind.speed)} km/h
                         </li>
                         <li>
-                            <WaterIcon fontSize="inherit" />
+                            <Drop size={32} />
                             Umidade: {weatherData.main.humidity}%
                         </li>
                     </ul>
@@ -112,4 +114,5 @@ function App() {
         );
     }
 }
+
 export default App;
