@@ -1,9 +1,9 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/allbertuu/weather-location?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/allbertuu/weather-location?style=for-the-badge)
+![image](https://img.shields.io/badge/status-completed-brightgreen)
+![image](https://img.shields.io/github/languages/count/allbertuu/weather-location)
 
 # Weather location React APP 🌦
 
-This is a project of the course by OneBitCode, focused in consume an API.
+This is a project of the course by OneBitCode, focused in consume an REST API with ReactJS.
 > I spent: 6 hours (without count the breaks) to finish this project 
 
 ## Table of contents
@@ -37,6 +37,7 @@ I learned/practiced how to:
 - Mobile-first workflow
 - MUI React icons lib
 - [React](https://reactjs.org/) - JS library
+- [Date-fns](https://date-fns.org/) - Toolset for manipulating JavaScript dates in a browser & Node.js
 
 ### What I learned 📚
 
@@ -45,10 +46,5 @@ I learned/practiced how to:
 #### CSS (SCSS)
 - Glassmorphism effect
 - Change the whole theme of the page based on JS scripts and their logics
-
-## Author 🙎🏻‍♂️
-- Website - [Alberto Albuquerque](https://portfolio-allbertuu.vercel.app/)
-- Frontend Mentor - [@allbertuu](https://www.frontendmentor.io/profile/allbertuu)
-- LinkedIn - [Alberto Albuquerque](https://www.linkedin.com/in/albertov-albuquerque/)
 
 [Back to the 🔝](#weather-location-react-app-)
