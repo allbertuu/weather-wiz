@@ -1,50 +1,48 @@
 ![image](https://img.shields.io/badge/status-completed-brightgreen)
 ![image](https://img.shields.io/github/languages/count/allbertuu/weather-location)
 
-# Weather location React APP 🌦
+# Projeto MELHORADO 🚀 (Alberto refatorou aqui ⚡)
+# Weather location 🌦
 
-This is a project of the course by OneBitCode, focused in consume an REST API with ReactJS.
-> I spent: 6 hours (without count the breaks) to finish this project 
+Esse é um projeto focado em consumir uma API REST com ReactJS.  
+Também adicionei várias funcionalidades interessantes e apoio ao criador do site.
 
-## Table of contents
+## O projeto ⚡
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge-)
-- [My process](#my-process)
-  - [Built with](#built-with-)
-  - [What I learned](#what-i-learned-)
-- [Author](#author-%EF%B8%8F)
+Eu aprendi/pratiquei como:
 
-## Overview
+1. Consumir APIs externas com ReactJS
+2. Capturar a localização do usuário e exibir o clima baseado na localidade
+3. Utilizar hooks
+4. Usar variáveis de ambiente
 
-### The challenge ⚡
+## Melhorias 🚀
+- Transformei em dinâmicos as boas-vindas e o papel de fundo, que mudam conforme a hora do dia de forma mais inteligente
+- Adicionei a biblioteca date-fns para manipular datas e horários
+- Comprimi as imagens para deixar a aplicação mais leve e performática
+- Aprimorado absurdamente a responsividade
+  - px para rem
+  - melhores códigos CSS
+- Adicionei a capacidade de apoiar o criador do site através de transferência PIX
 
-I learned/practiced how to:
-
-1. Consuming external APIs on React
-2. Get the user localization
-3. Use hooks in pratice
-4. Use environment variables
-
-## My process 
-
-### Built with ⚙
+## Stack utilizada
 
 - Semantic HTML5 markup
 - CSS custom properties
 - SCSS
-- Flexbox
 - Mobile-first workflow
-- MUI React icons lib
+- Phorsphor React Icons
+- TypeScript
+- Vite
+- Axios
 - [React](https://reactjs.org/) - JS library
 - [Date-fns](https://date-fns.org/) - Toolset for manipulating JavaScript dates in a browser & Node.js
 
-### What I learned 📚
+## Aprendizados 📚
+### Geral
+- Fetch APIs usando Axios
+### CSS
+- Efeito de Glassmorphismo
+- Mudar todo o tema do site baseado em lógica JavaScript, usando horários do dia.
 
-#### General
-- Fetch APIs using Axios
-#### CSS (SCSS)
-- Glassmorphism effect
-- Change the whole theme of the page based on JS scripts and their logics
-
-[Back to the 🔝](#weather-location-react-app-)
+[Ir ao topo 🔝](#weather-location-)
