@@ -12,8 +12,9 @@
 .title {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    color: #d3a880;
+    justify-content: center;
+    gap: 0.625rem;
+    color: #fff;
 
     svg {
         font-size: 3.125rem;
@@ -26,12 +27,12 @@
 
 .localizationInfos {
     text-align: center;
-    color: #555555;
+    color: #fff;
     display: block;
 }
 
 .card {
-    color: #a3a3a3;
+    color: #858585;
     backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(255, 255, 255, 0.493);
     border-radius: 18px;
@@ -53,7 +54,7 @@
 
     ul {
         list-style: none;
-        
+
         :nth-child(n):not(:last-child) {
             margin-bottom: 0.25rem;
         }
@@ -69,9 +70,6 @@
 body.night {
     .card {
         color: rgb(9 19 21);
-    }
-    .header * {
-        color: white;
     }
     .container {
         background-color: rgba(0, 0, 0, 0.65);
