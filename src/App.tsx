@@ -49,14 +49,18 @@ function App() {
         return (
             <div className="container">
                 <h3>
-                    Você precisa habilitar <br />a localização no browser o/
+                    Você precisa habilitar <br />a localização no browser :)
                 </h3>
             </div>
         );
     } else if (!weatherData) {
         return (
             <div className="container">
-                <h2>Carregando o clima...</h2>
+                <h2>Observando o céu...</h2>
+                <div className="spinner">
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         );
     } else {
