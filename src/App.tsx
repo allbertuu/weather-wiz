@@ -6,6 +6,7 @@ import {
     Thermometer,
     ThermometerCold,
     ThermometerHot,
+    Waves,
     Wind,
 } from "phosphor-react";
 import { useState, useEffect } from "react";
@@ -96,7 +97,7 @@ function App() {
                             Temperatura minima: {weatherData.main.temp_min}°
                         </li>
                         <li>
-                            <Wind size={22} />
+                            <Waves size={22} />
                             Sensação térmica: {weatherData.main.feels_like}°
                         </li>
                         <li>
