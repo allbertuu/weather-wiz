@@ -3,6 +3,7 @@ import {
     CloudMoon,
     CloudSun,
     Drop,
+    SunHorizon,
     Thermometer,
     ThermometerCold,
     ThermometerHot,
@@ -15,6 +16,7 @@ import {
     convertMSToKmH,
     currentHour,
     flexibleDayPeriod,
+    getHour,
     handleBodyStyles,
 } from "./utils";
 import "./styles/App.scss";
@@ -84,6 +86,14 @@ function App() {
                 <div className="card">
                     <h2>{weatherData.weather[0].description}</h2>
                     <ul>
+                        <li>
+                            <SunHorizon size={22} />
+                            Nascer do sol: {getHour(weatherData.sys.sunrise)}
+                        </li>
+                        <li>
+                            <SunHorizon size={22} />
+                            Pôr do sol: {getHour(weatherData.sys.sunset)}
+                        </li>
                         <li>
                             <Thermometer size={22} />
                             Temperatura atual: {weatherData.main.temp}°
