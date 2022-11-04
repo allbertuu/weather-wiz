@@ -53,6 +53,10 @@
 
     ul {
         list-style: none;
+        
+        :nth-child(n):not(:last-child) {
+            margin-bottom: 0.25rem;
+        }
 
         li {
             display: flex;
