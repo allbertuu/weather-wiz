@@ -66,12 +66,12 @@ function App() {
                         {flexibleDayPeriod.includes("noite") ? (
                             <>
                                 <h1>Boa noite</h1>
-                                <CloudMoon size={50} />
+                                <CloudMoon />
                             </>
                         ) : (
                             <>
                                 <h1>Bom dia</h1>
-                                <CloudSun size={50} />
+                                <CloudSun />
                             </>
                         )}
                     </div>

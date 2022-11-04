@@ -14,6 +14,14 @@
     align-items: center;
     gap: 1rem;
     color: #d3a880;
+
+    svg {
+        font-size: 3.125rem;
+
+        @media (max-width: 640px) {
+            font-size: 2.5rem;
+        }
+    }
 }
 
 .localizationInfos {
@@ -62,6 +70,6 @@ body.night {
         color: white;
     }
     .container {
-        background-color: rgba(0, 0, 0, 0.650);
+        background-color: rgba(0, 0, 0, 0.65);
     }
 }
