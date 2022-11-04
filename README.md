@@ -25,7 +25,7 @@ Eu aprendi/pratiquei como:
   - melhores códigos CSS
 - Adicionei a capacidade de apoiar o criador do site através de transferência PIX
 
-## Stack utilizada
+## Stack utilizada ⚙
 
 - Semantic HTML5 markup
 - CSS custom properties
