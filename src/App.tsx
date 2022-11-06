@@ -96,14 +96,6 @@ function App() {
                             Temperatura atual: {weatherData.main.temp}°
                         </li>
                         <li>
-                            <ThermometerHot size={22} />
-                            Temperatura máxima: {weatherData.main.temp_max}°
-                        </li>
-                        <li>
-                            <ThermometerCold size={22} />
-                            Temperatura minima: {weatherData.main.temp_min}°
-                        </li>
-                        <li>
                             <Waves size={22} />
                             Sensação térmica: {weatherData.main.feels_like}°
                         </li>
