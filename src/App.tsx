@@ -1,5 +1,6 @@
 import {
     CaretDoubleDown,
+    Cloud,
     CloudMoon,
     CloudSun,
     Drop,
@@ -91,14 +92,6 @@ function App() {
                     <h2>{weatherData.weather[0].description}</h2>
                     <ul>
                         <li>
-                            <SunHorizon size={22} />
-                            Nascer do sol: {getHour(weatherData.sys.sunrise)}
-                        </li>
-                        <li>
-                            <SunHorizon size={22} />
-                            Pôr do sol: {getHour(weatherData.sys.sunset)}
-                        </li>
-                        <li>
                             <Thermometer size={22} />
                             Temperatura atual: {weatherData.main.temp}°
                         </li>
@@ -124,8 +117,20 @@ function App() {
                             {convertMSToKmH(weatherData.wind.speed)} km/h
                         </li>
                         <li>
+                            <Cloud size={22} />
+                            Nº de nuvens: {weatherData.clouds.all}
+                        </li>
+                        <li>
                             <Drop size={22} />
                             Umidade: {weatherData.main.humidity}%
+                        </li>
+                        <li>
+                            <SunHorizon size={22} />
+                            Nascer do sol: {getHour(weatherData.sys.sunrise)}
+                        </li>
+                        <li>
+                            <SunHorizon size={22} />
+                            Pôr do sol: {getHour(weatherData.sys.sunset)}
                         </li>
                     </ul>
                 </div>
