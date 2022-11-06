@@ -71,7 +71,7 @@ function App() {
 
                 <header className="header">
                     <div className="title">
-                        {flexibleDayPeriod.includes("noite") ? (
+                        {flexibleDayPeriod.includes("noite") || flexibleDayPeriod.includes("madrugada") ? (
                             <>
                                 <h1>Boa noite</h1>
                                 <CloudMoon />

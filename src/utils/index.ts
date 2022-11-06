@@ -17,7 +17,7 @@ export const getHour = (timestamp: number) =>
 export const handleBodyStyles = () => {
     const body = document.body;
 
-    if (flexibleDayPeriod.includes("noite")) {
+    if (flexibleDayPeriod.includes("noite") || flexibleDayPeriod.includes("madrugada")) {
         body.className = "night";
     } else if (currentHour.includes("manhã")) {
         body.classList.remove("night");
