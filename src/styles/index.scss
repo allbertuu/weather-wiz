@@ -20,13 +20,13 @@ body {
 }
 
 @media (max-width: 640px) {
-    body {
-        font-size: 0.875rem;
+    html {
+        font-size: 75%;
     }
 }
 
 @media (min-width: 1024px) {
-    body {
-        font-size: 1.125rem;
+    html {
+        font-size: 110%;
     }
 }
