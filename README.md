@@ -1,5 +1,7 @@
-![image](https://img.shields.io/badge/status-completed-brightgreen)
-![image](https://img.shields.io/github/languages/count/allbertuu/weather-location)
+<h1 align="center">
+  <img src="https://img.shields.io/badge/status-completed-brightgreen" />
+  <img src="https://img.shields.io/github/languages/count/allbertuu/weather-location" />
+</h1>
 
 # Projeto MELHORADO 🚀 (Alberto refatorou aqui ⚡)
 # Weather location 🌦
