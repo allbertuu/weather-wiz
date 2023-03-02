@@ -3,10 +3,9 @@
   <img src="https://img.shields.io/github/languages/count/allbertuu/weather-location" />
 </h1>
 
-# Projeto MELHORADO 🚀 (Alberto refatorou aqui ⚡)
 # Weather location 🌦
 
-Esse é um projeto focado em consumir uma API REST com ReactJS.  
+Esse é um projeto focado em consumir uma API REST com ReactJS, neste caso a [Open Weather API](https://openweathermap.org/).  
 Também adicionei várias funcionalidades interessantes e apoio ao criador do site.
 
 ## O projeto ⚡
