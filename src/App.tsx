@@ -17,8 +17,8 @@ import {
     convertMSToKmH,
     currentHour,
     flexibleDayPeriod,
-    getHour,
-    handleBodyStyles,
+    formatHour,
+    handlePeriodOfTheDayBodyStyle,
 } from "./utils";
 import "./styles/App.scss";
 import { SupportCreator } from "./components/SupportCreator";
@@ -27,24 +27,29 @@ function App() {
     const [isGeolocationFound, setIsGeolocationFound] = useState(false);
     const [weatherData, setWeatherData] = useState<any | null>(null);
 
-    useEffect(() => {
-        handleBodyStyles();
-
-        navigator.geolocation.getCurrentPosition((position) => {
-            getWeather(position.coords.latitude, position.coords.longitude);
-            setIsGeolocationFound(true);
-        });
-    }, []);
-
     const getWeather = async (lat: number, long: number) => {
-        const res = await openWeatherAPI.get("/", {
+        return await openWeatherAPI.get("/", {
             params: {
                 lat: lat,
                 lon: long,
             },
         });
-        setWeatherData(res.data);
     };
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const res = await getWeather(
+                position.coords.latitude,
+                position.coords.longitude
+            );
+            setWeatherData(res.data);
+            setIsGeolocationFound(true);
+        });
+    }, []);
+
+    useEffect(() => {
+        handlePeriodOfTheDayBodyStyle();
+    }, []);
 
     if (!isGeolocationFound) {
         return (
@@ -134,11 +139,11 @@ function App() {
                         </li>
                         <li>
                             <SunHorizon size={22} />
-                            Nascer do sol: {getHour(weatherData.sys.sunrise)}
+                            Nascer do sol: {formatHour(weatherData.sys.sunrise)}
                         </li>
                         <li>
                             <SunHorizon size={22} />
-                            Pôr do sol: {getHour(weatherData.sys.sunset)}
+                            Pôr do sol: {formatHour(weatherData.sys.sunset)}
                         </li>
                     </ul>
                 </div>
