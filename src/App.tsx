@@ -97,7 +97,10 @@ function App() {
                         )}
                     </div>
                     <p className="localizationInfos">
-                        {weatherData.name}, {currentHour} {flexibleDayPeriod}
+                        Você está em <strong>{weatherData.name}</strong>, e são{" "}
+                        <strong>
+                            {currentHour} {flexibleDayPeriod}
+                        </strong>
                     </p>
                 </header>
 
