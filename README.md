@@ -5,45 +5,31 @@
 
 # Weather location 🌦
 
-Esse é um projeto focado em consumir uma API REST com ReactJS, neste caso a [Open Weather API](https://openweathermap.org/).  
-Também adicionei várias funcionalidades interessantes e apoio ao criador do site.
+☔ App criado pois precisei ter de fácil acesso informações locais importantes do meu momento atual usando Geolocalização em uma interface limpa e direta, funcionando em vários dispositivos. Ajudei familiares e trabalhadores locais.  
+Esse projeto consume uma API REST com ReactJS, a [Open Weather API](https://openweathermap.org/).
 
-## O projeto ⚡
+## Aprendizados 📚
 
-Eu aprendi/pratiquei como:
-
-1. Consumir APIs externas com ReactJS
+1. Consumir APIs externas com ReactJS/JavaScript
 2. Capturar a localização do usuário e exibir o clima baseado na localidade
-3. Utilizar hooks
+3. Utilizar hooks em ReactJS
 4. Usar variáveis de ambiente
 
-## Melhorias 🚀
-- Transformei em dinâmicos as boas-vindas e o papel de fundo, que mudam conforme a hora do dia de forma mais inteligente
-- Adicionei a biblioteca date-fns para manipular datas e horários
-- Comprimi as imagens para deixar a aplicação mais leve e performática
-- Aprimorado absurdamente a responsividade
-  - px para rem
-  - melhores códigos CSS
-- Adicionei a capacidade de apoiar o criador do site através de transferência PIX
+## Funcionalidades ⚡
+- Saber informações atualizadas sobre as condições climáticas do seu local atual.
+- Boas-vindas e papel de fundo dinâmicos. Mudam conforme a hora do dia.
+- Aplicativo leve e rápido.
+- Apoiar o criador do site.
 
 ## Stack utilizada ⚙
 
-- Semantic HTML5 markup
-- CSS custom properties
-- SCSS
-- Mobile-first workflow
+- [ReactJS](https://react.dev/) - JS library
+- Semantic HTML5, and CSS
+- JavaScript/TypeScript
+- SCSS/Sass
 - Phorsphor React Icons
-- TypeScript
 - Vite
 - Axios
-- [React](https://reactjs.org/) - JS library
 - [Date-fns](https://date-fns.org/) - Toolset for manipulating JavaScript dates in a browser & Node.js
-
-## Aprendizados 📚
-### Geral
-- Fetch APIs usando Axios
-### CSS
-- Efeito de Glassmorphismo
-- Mudar todo o tema do site baseado em lógica JavaScript, usando horários do dia.
 
 [Ir ao topo 🔝](#weather-location-)
