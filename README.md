@@ -5,8 +5,8 @@
 
 # Weather location 🌦
 
-☔ App criado pois precisei ter de fácil acesso informações locais importantes do meu momento atual usando Geolocalização em uma interface limpa e direta, funcionando em vários dispositivos. Ajudei familiares e trabalhadores locais.  
-Esse projeto consume uma API REST com ReactJS, a [Open Weather API](https://openweathermap.org/).
+☔ Criei este app pois precisei ter de fácil acesso importantes informações meteorológicas locais do momento atual usando Geolocalização em uma interface limpa e direta, funcionando em vários dispositivos. Ajudei familiares e trabalhadores locais com este projeto. 
+Esse projeto consome uma API REST com ReactJS, a [Open Weather API](https://openweathermap.org/).
 
 ## Aprendizados 📚
 
@@ -16,7 +16,7 @@ Esse projeto consume uma API REST com ReactJS, a [Open Weather API](https://open
 4. Usar variáveis de ambiente
 
 ## Funcionalidades ⚡
-- Saber informações atualizadas sobre as condições climáticas do seu local atual.
+- Saber informações em tempo real sobre as condições climáticas do seu local atual.
 - Boas-vindas e papel de fundo dinâmicos. Mudam conforme a hora do dia.
 - Aplicativo leve e rápido.
 - Apoiar o criador do site.
