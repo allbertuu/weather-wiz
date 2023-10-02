@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
-export const SupportCreator = () => {
+const SupportCreator: React.FC<any> = () => {
     const defaultMessageCopy = "Clique para copiar";
     const [open, setOpen] = useState(false);
     const [messageCopy, setMessageCopy] = useState(defaultMessageCopy);
@@ -13,11 +13,11 @@ export const SupportCreator = () => {
     };
 
     return (
-        <div className="wrapper">
+        <div className={styles.container}>
             <small
                 onMouseEnter={() => setOpen((prev) => !prev)}
                 onTouchStart={() => setOpen((prev) => !prev)}
-                className="text"
+                className={styles.text}
             >
                 Apoiar o criador deste site (passe o mouse)
             </small>
@@ -26,11 +26,13 @@ export const SupportCreator = () => {
                 open={open}
                 onClick={handleCopy}
                 onMouseLeave={() => setMessageCopy(defaultMessageCopy)}
-                className="tooltip"
+                className={styles.tooltip}
             >
                 Pix: {pix}
-                <span className="tooltipText">{messageCopy}</span>
+                <span className={styles.tooltipText}>{messageCopy}</span>
             </dialog>
         </div>
     );
 };
+
+export default SupportCreator;

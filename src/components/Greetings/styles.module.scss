@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  color: #fcfcfc;
+
+  svg {
+    font-size: 3.125rem;
+
+    @media (max-width: 640px) {
+      font-size: 2.5rem;
+    }
+  }
+}

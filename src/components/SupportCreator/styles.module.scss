@@ -1,4 +1,4 @@
-.wrapper {
+.container {
   position: absolute;
   top: 0.8rem;
   left: 1rem;
@@ -9,7 +9,8 @@
 }
 
 .text {
-  font-size: bold;
+  font-weight: bold;
+  opacity: 0.8;
 }
 
 .tooltip {
@@ -59,7 +60,7 @@
 }
 
 @media (max-width: 640px) {
-  .wrapper {
+  .container {
     bottom: 0.8rem;
     top: auto;
     left: auto;
