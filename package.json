@@ -8,7 +8,8 @@
         "build": "tsc && vite build",
         "preview": "vite preview",
         "format": "npx prettier --write .",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "lint": "eslint . --fix"
     },
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
