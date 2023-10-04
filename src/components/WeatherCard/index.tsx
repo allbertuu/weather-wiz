@@ -18,31 +18,36 @@ const WeatherCard: React.FC<unknown> = () => {
   const { weatherData } = useWeather();
 
   const windSpeed = convertMetersPerSecondToKilometersPerHour(
-    weatherData.wind.speed,
+    weatherData?.wind?.speed || 0,
   );
-  const sunriseHour = formatHour(weatherData.sys.sunrise);
-  const sunsetHour = formatHour(weatherData.sys.sunset);
+
+  const sunriseHour = weatherData?.sys.sunrise
+    ? formatHour(weatherData.sys.sunrise)
+    : 'Sem info';
+  const sunsetHour = weatherData?.sys.sunset
+    ? formatHour(weatherData.sys.sunset)
+    : 'Sem info';
 
   return (
     <div className="weather-card">
-      <h2>{weatherData.weather[0].description}</h2>
+      <h2>{weatherData?.weather[0]?.description}</h2>
       <ul>
         <li>
           <Thermometer size={22} />
           <div>
-            <strong>Temperatura atual:</strong> {weatherData.main.temp}°
+            <strong>Temperatura atual:</strong> {weatherData?.main?.temp}°
           </div>
         </li>
         <li>
           <Waves size={22} />
           <div>
-            <strong>Sensação térmica:</strong> {weatherData.main.feels_like}°
+            <strong>Sensação térmica:</strong> {weatherData?.main?.feels_like}°
           </div>
         </li>
         <li>
           <CaretDoubleDown size={22} />
           <div>
-            <strong>Pressão:</strong> {weatherData.main.pressure} hpa
+            <strong>Pressão:</strong> {weatherData?.main?.pressure} hpa
           </div>
         </li>
         <li>
@@ -54,13 +59,13 @@ const WeatherCard: React.FC<unknown> = () => {
         <li>
           <Cloud size={22} />
           <div>
-            <strong>Nº de nuvens:</strong> {weatherData.clouds.all}
+            <strong>Nº de nuvens:</strong> {weatherData?.clouds?.all}
           </div>
         </li>
         <li>
           <Drop size={22} />
           <div>
-            <strong>Umidade:</strong> {weatherData.main.humidity}%
+            <strong>Umidade:</strong> {weatherData?.main?.humidity}%
           </div>
         </li>
         <li>

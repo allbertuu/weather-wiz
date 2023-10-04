@@ -10,7 +10,7 @@ const GeolocationInfos: React.FC<unknown> = () => {
   );
 
   const FIFTEEN_SECONDS_IN_MILLISECONDS = 15000;
-  const localName = weatherData.name;
+  const localName = weatherData?.name;
 
   const updateHour = () => {
     setCurrentHour(formatHour(new Date().getTime() / 1000));
