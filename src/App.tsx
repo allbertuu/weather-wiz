@@ -43,7 +43,7 @@ function App() {
             <header className="header">
                 <Greetings />
 
-                <GeolocationInfos localName={weatherData.name} />
+                <GeolocationInfos />
             </header>
 
             <WeatherCard />
