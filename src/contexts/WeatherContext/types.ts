@@ -44,7 +44,7 @@ export interface IWeatherProvider {
   children: React.ReactNode;
 }
 
-export type TWeatherData = IOpenWeatherResponse | null;
+export type TWeatherData = IOpenWeatherResponse | Record<string, never>;
 
 export interface IWeatherContext {
   weatherData: TWeatherData;
