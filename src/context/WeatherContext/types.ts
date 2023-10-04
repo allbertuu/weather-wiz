@@ -1,4 +1,4 @@
-interface IOpenWeatherResponse {
+export interface IOpenWeatherResponse {
   coord: {
     lon: number;
     lat: number;
@@ -44,9 +44,11 @@ export interface IWeatherProvider {
   children: React.ReactNode;
 }
 
+export type TWeatherData = IOpenWeatherResponse | null;
+
 export interface IWeatherContext {
-  weatherData: IOpenWeatherResponse;
+  weatherData: TWeatherData;
   isGeolocationFound: boolean;
   setIsGeolocationFound?: React.Dispatch<React.SetStateAction<boolean>>;
-  setWeatherData?: React.Dispatch<React.SetStateAction<IOpenWeatherResponse>>;
+  setWeatherData?: React.Dispatch<React.SetStateAction<TWeatherData>>;
 }

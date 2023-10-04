@@ -1,11 +1,11 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
-import { IWeatherContext, IWeatherProvider } from './types';
+import { IWeatherContext, IWeatherProvider, TWeatherData } from './types';
 import { openWeatherAPI } from '../../services/api';
 
 export const WeatherContext = createContext({} as IWeatherContext);
 
 export function WeatherProvider({ children }: IWeatherProvider) {
-  const [weatherData, setWeatherData] = useState<unknown | null>(null);
+  const [weatherData, setWeatherData] = useState<TWeatherData>(null);
   const [isGeolocationFound, setIsGeolocationFound] = useState(false);
   const FIVE_MINUTES_IN_MILLISECONDS = 300000;
 
