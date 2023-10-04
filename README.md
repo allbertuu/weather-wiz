@@ -1,9 +1,9 @@
 <h1 align="center">
   <img src="https://img.shields.io/badge/status-completed-brightgreen" />
-  <img src="https://img.shields.io/github/languages/count/allbertuu/weather-location" />
+  <img src="https://img.shields.io/github/languages/count/allbertuu/WeatherWiz" />
 </h1>
 
-# Weather location 🌦
+# WeatherWiz 🌦
 
 ☔ Criei este app pois precisei ter de fácil acesso importantes informações meteorológicas locais do momento atual usando Geolocalização em uma interface limpa e direta, funcionando em vários dispositivos. Ajudei familiares e trabalhadores locais com este projeto. 
 Esse projeto consome uma API REST com ReactJS, a [Open Weather API](https://openweathermap.org/).
@@ -32,4 +32,4 @@ Esse projeto consome uma API REST com ReactJS, a [Open Weather API](https://open
 - Axios
 - [Date-fns](https://date-fns.org/) - Toolset for manipulating JavaScript dates in a browser & Node.js
 
-[Ir ao topo 🔝](#weather-location-)
+[Ir ao topo 🔝](#weatherwiz-)
