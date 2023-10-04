@@ -1,29 +1,29 @@
 {
-  "name": "weather-location",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "axios": "^1.1.3",
-    "date-fns": "^2.29.3",
-    "phosphor-react": "^1.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.22",
-    "@types/react-dom": "^18.0.7",
-    "@vitejs/plugin-react": "^2.2.0",
-    "sass": "^1.55.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.2.0"
-  }
+    "name": "weather-wiz",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^14.4.3",
+        "axios": "^1.1.3",
+        "date-fns": "^2.29.3",
+        "phosphor-react": "^1.4.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.22",
+        "@types/react-dom": "^18.0.7",
+        "@vitejs/plugin-react": "^2.2.0",
+        "sass": "^1.55.0",
+        "typescript": "^4.6.4",
+        "vite": "^3.2.0"
+    }
 }
