@@ -1,49 +1,75 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
-import { IWeatherContext, IWeatherProvider, TWeatherData } from './types';
+import {
+  IOpenWeatherResponse,
+  IWeatherContext,
+  IWeatherProvider,
+} from './types';
 import { openWeatherAPI } from '../../services/api';
 
-export const WeatherContext = createContext({} as IWeatherContext);
+export const CurrentLocalWeatherInformationContext = createContext(
+  {} as IWeatherContext,
+);
 
-export function WeatherProvider({ children }: IWeatherProvider) {
-  const [weatherData, setWeatherData] = useState<TWeatherData>(null);
-  const [isGeolocationFound, setIsGeolocationFound] = useState(false);
-  const FIVE_MINUTES_IN_MILLISECONDS = 300000;
+export function CurrentLocalWeatherInformationProvider({
+  children,
+}: IWeatherProvider) {
+  const [currentLocalWeatherInformation, setCurrentLocalWeatherInformation] =
+    useState<IOpenWeatherResponse | null>(null);
+  const [isDevicePositionFound, setIsDevicePositionFound] = useState(false);
+  const fiveMinutesInMilliseconds = 300000;
 
-  const getWeather = async (lat: number, long: number) => {
+  const getCurrentLocalWeatherInformationByDevicePosition = async ({
+    latitude,
+    longitude,
+  }: {
+    latitude: number;
+    longitude: number;
+  }) => {
     return await openWeatherAPI.get('/', {
       params: {
-        lat,
-        lon: long,
+        lat: latitude,
+        lon: longitude,
       },
     });
   };
 
-  const fetchWeatherByPosition = useCallback(() => {
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        setIsGeolocationFound(true);
-        const res = await getWeather(
-          position.coords.latitude,
-          position.coords.longitude,
-        );
-        setWeatherData(res.data);
-      },
-      null,
-      { enableHighAccuracy: true },
+  const fetchCurrentLocalWeatherInformationByDevicePosition =
+    useCallback(() => {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          setIsDevicePositionFound(true);
+
+          const res = await getCurrentLocalWeatherInformationByDevicePosition({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+
+          setCurrentLocalWeatherInformation(res.data);
+        },
+        null,
+        { enableHighAccuracy: true },
+      );
+    }, []);
+
+  useEffect(() => {
+    fetchCurrentLocalWeatherInformationByDevicePosition();
+  }, [fetchCurrentLocalWeatherInformationByDevicePosition]);
+
+  useEffect(() => {
+    setInterval(
+      () => fetchCurrentLocalWeatherInformationByDevicePosition,
+      fiveMinutesInMilliseconds,
     );
-  }, []);
-
-  useEffect(() => {
-    fetchWeatherByPosition();
-  }, [fetchWeatherByPosition]);
-
-  useEffect(() => {
-    setInterval(() => fetchWeatherByPosition, FIVE_MINUTES_IN_MILLISECONDS);
-  }, [fetchWeatherByPosition]);
+  }, [fetchCurrentLocalWeatherInformationByDevicePosition]);
 
   return (
-    <WeatherContext.Provider value={{ weatherData, isGeolocationFound }}>
+    <CurrentLocalWeatherInformationContext.Provider
+      value={{
+        weatherData: currentLocalWeatherInformation,
+        isGeolocationFound: isDevicePositionFound,
+      }}
+    >
       {children}
-    </WeatherContext.Provider>
+    </CurrentLocalWeatherInformationContext.Provider>
   );
 }
