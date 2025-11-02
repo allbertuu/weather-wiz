@@ -18,19 +18,23 @@ export function CurrentLocalWeatherInformationProvider({
   const [isDevicePositionFound, setIsDevicePositionFound] = useState(false);
   const fiveMinutesInMilliseconds = 300000;
 
+  interface IDevicePosition {
+    latitude: number;
+    longitude: number;
+  }
+
   const getCurrentLocalWeatherInformationByDevicePosition = async ({
     latitude,
     longitude,
-  }: {
-    latitude: number;
-    longitude: number;
-  }) => {
-    return await openWeatherAPI.get('/', {
+  }: IDevicePosition) => {
+    const res = await openWeatherAPI.get('/', {
       params: {
         lat: latitude,
         lon: longitude,
       },
     });
+
+    return res.data as IOpenWeatherResponse;
   };
 
   const fetchCurrentLocalWeatherInformationByDevicePosition =
@@ -39,12 +43,13 @@ export function CurrentLocalWeatherInformationProvider({
         async (position) => {
           setIsDevicePositionFound(true);
 
-          const res = await getCurrentLocalWeatherInformationByDevicePosition({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          });
+          const currentWeatherInformation =
+            await getCurrentLocalWeatherInformationByDevicePosition({
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+            });
 
-          setCurrentLocalWeatherInformation(res.data);
+          setCurrentLocalWeatherInformation(currentWeatherInformation);
         },
         null,
         { enableHighAccuracy: true },
