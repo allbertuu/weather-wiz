@@ -5,6 +5,7 @@ import {
   IWeatherProvider,
 } from './types';
 import { openWeatherAPI } from '../../services/api';
+import { getDevicePosition } from '../../utils';
 
 export const CurrentLocalWeatherInformationContext = createContext(
   {} as IWeatherContext,
@@ -38,22 +39,23 @@ export function CurrentLocalWeatherInformationProvider({
   };
 
   const fetchCurrentLocalWeatherInformationByDevicePosition =
-    useCallback(() => {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          setIsDevicePositionFound(true);
+    useCallback(async () => {
+      const devicePosition = await getDevicePosition();
 
-          const currentWeatherInformation =
-            await getCurrentLocalWeatherInformationByDevicePosition({
-              latitude: position.coords.latitude,
-              longitude: position.coords.longitude,
-            });
+      if (devicePosition === null) {
+        setIsDevicePositionFound(false);
+        return;
+      }
 
-          setCurrentLocalWeatherInformation(currentWeatherInformation);
-        },
-        null,
-        { enableHighAccuracy: true },
-      );
+      setIsDevicePositionFound(true);
+
+      const currentWeatherInformation =
+        await getCurrentLocalWeatherInformationByDevicePosition({
+          latitude: devicePosition.coords.latitude,
+          longitude: devicePosition.coords.longitude,
+        });
+
+      setCurrentLocalWeatherInformation(currentWeatherInformation);
     }, []);
 
   useEffect(() => {
