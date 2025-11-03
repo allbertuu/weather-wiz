@@ -1,11 +1,10 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
-import {
-  IOpenWeatherResponse,
-  IWeatherContext,
-  IWeatherProvider,
-} from './types';
-import { openWeatherAPI } from '../../services/api';
+import { IWeatherContext, IWeatherProvider } from './types';
 import { getDevicePosition } from '../../utils';
+import {
+  getCurrentLocalWeatherInformationByDevicePosition,
+  IOpenWeatherResponse,
+} from '../../services/openWeather';
 
 export const CurrentLocalWeatherInformationContext = createContext(
   {} as IWeatherContext,
@@ -18,25 +17,6 @@ export function CurrentLocalWeatherInformationProvider({
     useState<IOpenWeatherResponse | null>(null);
   const [isDevicePositionFound, setIsDevicePositionFound] = useState(false);
   const fiveMinutesInMilliseconds = 300000;
-
-  interface IDevicePosition {
-    latitude: number;
-    longitude: number;
-  }
-
-  const getCurrentLocalWeatherInformationByDevicePosition = async ({
-    latitude,
-    longitude,
-  }: IDevicePosition) => {
-    const res = await openWeatherAPI.get('/', {
-      params: {
-        lat: latitude,
-        lon: longitude,
-      },
-    });
-
-    return res.data as IOpenWeatherResponse;
-  };
 
   const fetchCurrentLocalWeatherInformationByDevicePosition =
     useCallback(async () => {
