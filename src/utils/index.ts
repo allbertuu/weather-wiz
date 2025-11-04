@@ -37,11 +37,11 @@ export const formatHour = (timestampInSeconds: number) => {
 
 export const handlePeriodOfTheDayBodyStyle = () => {
   const body = document.body;
-
-  if (
+  const isNight =
     flexibleDayPeriod.includes('noite') ||
-    flexibleDayPeriod.includes('madrugada')
-  ) {
+    flexibleDayPeriod.includes('madrugada');
+
+  if (isNight) {
     body.className = 'night';
   } else {
     body.classList.remove('night');
