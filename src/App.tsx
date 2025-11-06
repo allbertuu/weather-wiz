@@ -12,14 +12,14 @@ import { useWeather } from './hooks';
 
 function App() {
   const { weatherData, isGeolocationFound } = useWeather();
-  const isUnknownDevicePosition = isGeolocationFound === false;
+  const isDevicePositionUnknown = isGeolocationFound === false;
   const isCurrentWeatherInformationEmpty = weatherData === null;
 
   useEffect(() => {
     handlePeriodOfTheDayBodyStyle();
   }, []);
 
-  if (isUnknownDevicePosition) {
+  if (isDevicePositionUnknown) {
     return (
       <div className="container">
         <h3>
