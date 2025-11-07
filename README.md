@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="https://img.shields.io/badge/status-completed-brightgreen" />
-  <img src="https://img.shields.io/github/languages/count/allbertuu/WeatherWiz" />
+  <img src="https://img.shields.io/github/languages/count/allbertuu/weather-wiz" />
 </h1>
 
 # WeatherWiz 🌦
