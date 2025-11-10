@@ -1,35 +1,30 @@
 <h1 align="center">
   <img src="https://img.shields.io/badge/status-completed-brightgreen" />
-  <img src="https://img.shields.io/github/languages/count/allbertuu/weather-wiz" />
+![Static Badge](https://img.shields.io/badge/Version-1.0.0-%23111111)
 </h1>
+
 
 # WeatherWiz 🌦
 
-☔ Criei este app pois precisei ter de fácil acesso importantes informações meteorológicas locais do momento atual usando Geolocalização em uma interface limpa e direta, funcionando em vários dispositivos. Ajudei familiares e trabalhadores locais com este projeto. 
-Esse projeto consome uma API REST com ReactJS, a [Open Weather API](https://openweathermap.org/).
+Um app de clima amigável e feito pra ser direto ao ponto. Adapta o plano de fundo conforme o horário do seu dia 🌞🌚
+> Esse projeto consome a [Open Weather API](https://openweathermap.org/).
 
-## Aprendizados 📚
+## Funcionalidades
 
-1. Consumir APIs externas com ReactJS/JavaScript
-2. Capturar a localização do usuário e exibir o clima baseado na localidade
-3. Utilizar hooks em ReactJS
-4. Usar variáveis de ambiente
-
-## Funcionalidades ⚡
-- Saber informações em tempo real sobre as condições climáticas do seu local atual.
+- Saber as condições climáticas em tempo real sobre seu local atual de forma rápida e automática.
 - Boas-vindas e papel de fundo dinâmicos. Mudam conforme a hora do dia.
 - Aplicativo leve e rápido.
 - Apoiar o criador do site.
 
-## Stack utilizada ⚙
+## Tecnologias do projeto
 
-- [ReactJS](https://react.dev/) - JS library
-- Semantic HTML5, and CSS
-- JavaScript/TypeScript
-- SCSS/Sass
-- Phorsphor React Icons
-- Vite
-- Axios
-- [Date-fns](https://date-fns.org/) - Toolset for manipulating JavaScript dates in a browser & Node.js
+- [React (com Hooks)](https://react.dev/): escolhido pela rapidez de desenvolvimento e componentização clara
+- HTML5 e CSS3: base da web
+- JavaScript/TypeScript: tipagem estática, prevenir bugs e acelerar desenvolvimento
+- SCSS/Sass: acelerar desenvolvimento de estilos complexos em CSS
+- Phorsphor React Icons: lib de ícones leve e intuitiva
+- Vite: framework web ultra rápido e boa DX
+- Axios: clareza e bom gerenciamento e integração com APIs REST
+- [Date-fns](https://date-fns.org/): lib de manipulação de datas leve e intuitiva
 
 [Ir ao topo 🔝](#weatherwiz-)
