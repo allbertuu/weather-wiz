@@ -1,8 +1,5 @@
-<h1 align="center">
-  <img src="https://img.shields.io/badge/status-completed-brightgreen" />
+<img src="https://img.shields.io/badge/status-completed-brightgreen" />
 ![Static Badge](https://img.shields.io/badge/Version-1.0.0-%23111111)
-</h1>
-
 
 # WeatherWiz 🌦
 
