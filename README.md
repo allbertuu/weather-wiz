@@ -5,6 +5,7 @@
 # WeatherWiz 🌦
 
 Um app de clima amigável e feito pra ser direto ao ponto. Adapta o plano de fundo conforme o horário do seu dia 🌞🌚
+Acesse aqui: https://weather-wiz-allbertuu.vercel.app/
 > Esse projeto consome a [Open Weather API](https://openweathermap.org/).
 
 ## Funcionalidades
