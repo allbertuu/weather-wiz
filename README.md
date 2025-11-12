@@ -16,6 +16,47 @@ Acesse aqui: https://weather-wiz-allbertuu.vercel.app/
 - Aplicativo leve e rápido.
 - Apoiar o criador do site.
 
+## Como executar o projeto
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/allbertuu/weather-wiz.git
+   ```
+
+2. Acesse o diretório do projeto:
+
+   ```bash
+   cd weather-wiz
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Abra o navegador e acesse:
+   ```
+   http://localhost:5173
+   ```
+
+<!-- 
+## 🧪 Testes
+
+Para executar os testes, utilize o comando:
+
+```bash
+npm test
+```
+-->
+
 ## Tecnologias do projeto
 
 - [React (com Hooks)](https://react.dev/): escolhido pela rapidez de desenvolvimento e componentização clara
