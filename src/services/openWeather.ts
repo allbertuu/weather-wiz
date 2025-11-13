@@ -67,5 +67,7 @@ export const getCurrentLocalWeatherInformationByDevicePosition = async ({
     },
   });
 
+  // TODO: Handle possible errors from API response
+
   return res.data as IOpenWeatherResponse;
 };
