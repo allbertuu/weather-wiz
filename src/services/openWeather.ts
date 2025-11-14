@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
-export interface IOpenWeatherResponse {
+interface IOpenWeatherData {
   coord: {
     lon: number;
     lat: number;
@@ -42,6 +42,8 @@ export interface IOpenWeatherResponse {
   cod: number;
 }
 
+export type IOpenWeatherResponse = IOpenWeatherData;
+
 interface IDevicePosition {
   latitude: number;
   longitude: number;
@@ -56,18 +58,39 @@ export const api = axios.create({
   },
 });
 
-export const getCurrentLocalWeatherInformationByDevicePosition = async ({
+export const fetchWeatherInformation = async ({
   latitude,
   longitude,
 }: IDevicePosition) => {
-  const res = await api.get('/', {
-    params: {
-      lat: latitude,
-      lon: longitude,
-    },
-  });
+  try {
+    const res = await api.get('/', {
+      params: {
+        lat: latitude,
+        lon: longitude,
+      },
+    });
 
-  // TODO: Handle possible errors from API response
+    const weatherInformation = res.data as IOpenWeatherResponse;
+    return weatherInformation;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      if (error.response) {
+        throw new Error(
+          `Erro ao buscar dados de clima: ${error.response.data.message}`,
+        );
+      }
 
-  return res.data as IOpenWeatherResponse;
+      throw new Error(`Erro ao buscar dados de clima: ${error.message}`);
+    }
+
+    if (error instanceof Error) {
+      throw new Error(
+        `Erro desconhecido ao buscar dados de clima: ${error.message}`,
+      );
+    }
+
+    throw new Error(
+      `Erro desconhecido ao buscar dados de clima: ${String(error)}`,
+    );
+  }
 };
