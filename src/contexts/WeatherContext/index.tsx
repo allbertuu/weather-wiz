@@ -32,7 +32,7 @@ export function CurrentLocalWeatherInformationProvider({
         return;
       }
 
-      alert(String(error));
+      alert(`Erro ao obter localização: ${String(error)}`);
     }
   };
 
