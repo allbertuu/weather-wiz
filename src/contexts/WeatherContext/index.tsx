@@ -18,22 +18,37 @@ export function CurrentLocalWeatherInformationProvider({
   const [isDevicePositionFound, setIsDevicePositionFound] = useState(false);
   const fiveMinutesInMilliseconds = 300000;
 
-  const handleFetchWeatherInformation = useCallback(async () => {
-    const devicePosition = await getDevicePosition();
+  const handleGetDevicePosition = async () => {
+    try {
+      const devicePosition = await getDevicePosition();
+      return devicePosition;
+    } catch (error) {
+      if (error instanceof GeolocationPositionError) {
+        alert(
+          error.code === 1 // permission denied
+            ? 'Permissão de localização negada. Habilite a localização para obter dados meteorológicos.'
+            : `Erro ao obter localização: ${error.message}`,
+        );
+        return;
+      }
 
-    if (devicePosition === null) {
-      setIsDevicePositionFound(false);
-      return;
+      alert(String(error));
     }
+  };
 
-    setIsDevicePositionFound(true);
-
+  const handleFetchWeatherInformation = async ({
+    latitude,
+    longitude,
+  }: {
+    latitude: number;
+    longitude: number;
+  }) => {
     try {
       const currentWeatherInformation = await fetchWeatherInformation({
-        latitude: devicePosition.coords.latitude,
-        longitude: devicePosition.coords.longitude,
+        latitude,
+        longitude,
       });
-      setCurrentLocalWeatherInformation(currentWeatherInformation);
+      return currentWeatherInformation;
     } catch (error) {
       if (error instanceof Error) {
         alert(error.message);
@@ -42,15 +57,42 @@ export function CurrentLocalWeatherInformationProvider({
 
       alert(String(error));
     }
+  };
+
+  const getWeatherInformation = useCallback(async () => {
+    const devicePosition = await handleGetDevicePosition();
+    const isDevicePositionUnknown = devicePosition === undefined;
+
+    if (isDevicePositionUnknown) {
+      setIsDevicePositionFound(false);
+      return;
+    }
+
+    setIsDevicePositionFound(true);
+
+    const currentWeatherInformation = await handleFetchWeatherInformation({
+      latitude: devicePosition.coords.latitude,
+      longitude: devicePosition.coords.longitude,
+    });
+
+    const currentWeatherInformationUnknown =
+      currentWeatherInformation === undefined;
+
+    if (currentWeatherInformationUnknown) {
+      setCurrentLocalWeatherInformation(null);
+      return;
+    }
+
+    setCurrentLocalWeatherInformation(currentWeatherInformation);
   }, []);
 
   useEffect(() => {
-    handleFetchWeatherInformation();
-  }, [handleFetchWeatherInformation]);
+    getWeatherInformation();
+  }, [getWeatherInformation]);
 
   useEffect(() => {
-    setInterval(() => handleFetchWeatherInformation, fiveMinutesInMilliseconds);
-  }, [handleFetchWeatherInformation]);
+    setInterval(() => getWeatherInformation, fiveMinutesInMilliseconds);
+  }, [getWeatherInformation]);
 
   return (
     <CurrentLocalWeatherInformationContext.Provider
