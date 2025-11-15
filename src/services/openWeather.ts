@@ -75,22 +75,16 @@ export const fetchWeatherInformation = async ({
   } catch (error) {
     if (error instanceof AxiosError) {
       if (error.response) {
-        throw new Error(
-          `Erro ao buscar dados de clima: ${error.response.data.message}`,
-        );
+        throw new Error(error.response.data.message);
       }
 
-      throw new Error(`Erro ao buscar dados de clima: ${error.message}`);
+      throw new Error(error.message);
     }
 
     if (error instanceof Error) {
-      throw new Error(
-        `Erro desconhecido ao buscar dados de clima: ${error.message}`,
-      );
+      throw new Error(error.message);
     }
 
-    throw new Error(
-      `Erro desconhecido ao buscar dados de clima: ${String(error)}`,
-    );
+    throw new Error(String(error));
   }
 };

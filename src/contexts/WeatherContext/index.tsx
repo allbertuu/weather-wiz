@@ -51,11 +51,11 @@ export function CurrentLocalWeatherInformationProvider({
       return currentWeatherInformation;
     } catch (error) {
       if (error instanceof Error) {
-        alert(error.message);
+        alert(`Erro ao buscar dados de clima: ${error.message}`);
         return;
       }
 
-      alert(String(error));
+      alert(`Erro ao buscar dados de clima: ${String(error)}`);
     }
   };
 
