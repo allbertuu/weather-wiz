@@ -45,7 +45,7 @@ interface IOpenWeatherData {
 export type IOpenWeatherResponse = IOpenWeatherData;
 
 export const api = axios.create({
-  baseURL: 'https://api.openweathermap.org/data/2.5/weather',
+  baseURL: 'https://api.oopenweathermap.org/data/2.5/weather',
   params: {
     appid: import.meta.env.VITE_OPEN_WEATHER_KEY,
     lang: 'pt',

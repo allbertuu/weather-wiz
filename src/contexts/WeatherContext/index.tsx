@@ -16,6 +16,8 @@ export function CurrentLocalWeatherInformationProvider({
   const [currentLocalWeatherInformation, setCurrentLocalWeatherInformation] =
     useState<IOpenWeatherResponse | null>(null);
   const [isDevicePositionFound, setIsDevicePositionFound] = useState(false);
+  const [isLoadingWeatherInformation, setIsLoadingWeatherInformation] =
+    useState(true);
   const fiveMinutesInMilliseconds = 300000;
 
   const handleGetDevicePosition = async () => {
@@ -75,15 +77,12 @@ export function CurrentLocalWeatherInformationProvider({
       longitude: devicePosition.coords.longitude,
     });
 
-    const currentWeatherInformationUnknown =
-      currentWeatherInformation === undefined;
-
-    if (currentWeatherInformationUnknown) {
-      setCurrentLocalWeatherInformation(null);
-      return;
+    if (currentWeatherInformation) {
+      setCurrentLocalWeatherInformation(currentWeatherInformation);
     }
 
-    setCurrentLocalWeatherInformation(currentWeatherInformation);
+    // Set loading to false after data is fetched
+    setIsLoadingWeatherInformation(false);
   }, []);
 
   useEffect(() => {
@@ -99,6 +98,7 @@ export function CurrentLocalWeatherInformationProvider({
       value={{
         weatherData: currentLocalWeatherInformation,
         isGeolocationFound: isDevicePositionFound,
+        isLoadingWeatherInformation,
       }}
     >
       {children}

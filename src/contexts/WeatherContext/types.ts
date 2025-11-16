@@ -6,4 +6,5 @@ export interface IWeatherProvider {
 export interface IWeatherContext {
   weatherData: IOpenWeatherResponse | null;
   isGeolocationFound: boolean;
+  isLoadingWeatherInformation: boolean;
 }

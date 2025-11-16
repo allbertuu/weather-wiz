@@ -11,9 +11,8 @@ import {
 import { useWeather } from './hooks';
 
 function App() {
-  const { weatherData, isGeolocationFound } = useWeather();
+  const { isGeolocationFound, isLoadingWeatherInformation } = useWeather();
   const isDevicePositionUnknown = isGeolocationFound === false;
-  const isCurrentWeatherInformationEmpty = weatherData === null;
 
   useEffect(() => {
     handlePeriodOfTheDayBodyStyle();
@@ -29,7 +28,7 @@ function App() {
     );
   }
 
-  if (isCurrentWeatherInformationEmpty) {
+  if (isLoadingWeatherInformation) {
     return (
       <div className="container">
         <h2>Observando o céu...</h2>
