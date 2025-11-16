@@ -4,9 +4,10 @@
 
 # WeatherWiz 🌦
 
-Um app de clima amigável e feito pra ser direto ao ponto. Adapta o plano de fundo conforme o horário do seu dia 🌞🌚  
+Um app de clima amigável e feito pra ser direto ao ponto. Adapta o plano de fundo conforme o horário do seu dia 🌞🌚
 
-Acesse aqui: https://weather-wiz-allbertuu.vercel.app/
+Acesse aqui: <https://weather-wiz-allbertuu.vercel.app/>
+
 > Esse projeto consome a [Open Weather API](https://openweathermap.org/).
 
 ## Funcionalidades
@@ -43,11 +44,12 @@ Acesse aqui: https://weather-wiz-allbertuu.vercel.app/
    ```
 
 5. Abra o navegador e acesse:
-   ```
+
+   ```bash
    http://localhost:5173
    ```
 
-<!-- 
+<!--
 ## 🧪 Testes
 
 Para executar os testes, utilize o comando:
