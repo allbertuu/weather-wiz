@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
-export interface IOpenWeatherResponse {
+interface IOpenWeatherData {
   coord: {
     lon: number;
     lat: number;
@@ -42,10 +42,7 @@ export interface IOpenWeatherResponse {
   cod: number;
 }
 
-interface IDevicePosition {
-  latitude: number;
-  longitude: number;
-}
+export type IOpenWeatherResponse = IOpenWeatherData;
 
 export const api = axios.create({
   baseURL: 'https://api.openweathermap.org/data/2.5/weather',
@@ -56,16 +53,36 @@ export const api = axios.create({
   },
 });
 
-export const getCurrentLocalWeatherInformationByDevicePosition = async ({
+export const fetchWeatherInformation = async ({
   latitude,
   longitude,
-}: IDevicePosition) => {
-  const res = await api.get('/', {
-    params: {
-      lat: latitude,
-      lon: longitude,
-    },
-  });
+}: {
+  latitude: number;
+  longitude: number;
+}) => {
+  try {
+    const res = await api.get('/', {
+      params: {
+        lat: latitude,
+        lon: longitude,
+      },
+    });
 
-  return res.data as IOpenWeatherResponse;
+    const weatherInformation = res.data as IOpenWeatherResponse;
+    return weatherInformation;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      if (error.response) {
+        throw new Error(error.response.data.message);
+      }
+
+      throw new Error(error.message);
+    }
+
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    }
+
+    throw new Error(String(error));
+  }
 };

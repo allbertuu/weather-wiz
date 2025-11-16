@@ -7,14 +7,14 @@ export const convertMetersPerSecondToKilometersPerHour = (
   metersBySec: number,
 ) => Math.round(metersBySec * 3.6);
 
-export const getDevicePosition = (): Promise<GeolocationPosition | null> => {
-  return new Promise((resolve) => {
+export const getDevicePosition = (): Promise<GeolocationPosition> => {
+  return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         resolve(position);
       },
-      () => {
-        resolve(null);
+      (positionErr) => {
+        reject(positionErr);
       },
       { enableHighAccuracy: true },
     );

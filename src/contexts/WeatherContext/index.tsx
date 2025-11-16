@@ -2,7 +2,7 @@ import { createContext, useCallback, useEffect, useState } from 'react';
 import { IWeatherContext, IWeatherProvider } from './types';
 import { getDevicePosition } from '../../utils';
 import {
-  getCurrentLocalWeatherInformationByDevicePosition,
+  fetchWeatherInformation,
   IOpenWeatherResponse,
 } from '../../services/openWeather';
 
@@ -18,36 +18,81 @@ export function CurrentLocalWeatherInformationProvider({
   const [isDevicePositionFound, setIsDevicePositionFound] = useState(false);
   const fiveMinutesInMilliseconds = 300000;
 
-  const fetchCurrentLocalWeatherInformationByDevicePosition =
-    useCallback(async () => {
+  const handleGetDevicePosition = async () => {
+    try {
       const devicePosition = await getDevicePosition();
-
-      if (devicePosition === null) {
-        setIsDevicePositionFound(false);
+      return devicePosition;
+    } catch (error) {
+      if (error instanceof GeolocationPositionError) {
+        alert(
+          error.code === 1 // permission denied
+            ? 'Permissão de localização negada. Habilite a localização para obter dados meteorológicos.'
+            : `Erro ao obter localização: ${error.message}`,
+        );
         return;
       }
 
-      setIsDevicePositionFound(true);
+      alert(`Erro ao obter localização: ${String(error)}`);
+    }
+  };
 
-      const currentWeatherInformation =
-        await getCurrentLocalWeatherInformationByDevicePosition({
-          latitude: devicePosition.coords.latitude,
-          longitude: devicePosition.coords.longitude,
-        });
+  const handleFetchWeatherInformation = async ({
+    latitude,
+    longitude,
+  }: {
+    latitude: number;
+    longitude: number;
+  }) => {
+    try {
+      const currentWeatherInformation = await fetchWeatherInformation({
+        latitude,
+        longitude,
+      });
+      return currentWeatherInformation;
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(`Erro ao buscar dados de clima: ${error.message}`);
+        return;
+      }
 
-      setCurrentLocalWeatherInformation(currentWeatherInformation);
-    }, []);
+      alert(`Erro ao buscar dados de clima: ${String(error)}`);
+    }
+  };
+
+  const getWeatherInformation = useCallback(async () => {
+    const devicePosition = await handleGetDevicePosition();
+    const isDevicePositionUnknown = devicePosition === undefined;
+
+    if (isDevicePositionUnknown) {
+      setIsDevicePositionFound(false);
+      return;
+    }
+
+    setIsDevicePositionFound(true);
+
+    const currentWeatherInformation = await handleFetchWeatherInformation({
+      latitude: devicePosition.coords.latitude,
+      longitude: devicePosition.coords.longitude,
+    });
+
+    const currentWeatherInformationUnknown =
+      currentWeatherInformation === undefined;
+
+    if (currentWeatherInformationUnknown) {
+      setCurrentLocalWeatherInformation(null);
+      return;
+    }
+
+    setCurrentLocalWeatherInformation(currentWeatherInformation);
+  }, []);
 
   useEffect(() => {
-    fetchCurrentLocalWeatherInformationByDevicePosition();
-  }, [fetchCurrentLocalWeatherInformationByDevicePosition]);
+    getWeatherInformation();
+  }, [getWeatherInformation]);
 
   useEffect(() => {
-    setInterval(
-      () => fetchCurrentLocalWeatherInformationByDevicePosition,
-      fiveMinutesInMilliseconds,
-    );
-  }, [fetchCurrentLocalWeatherInformationByDevicePosition]);
+    setInterval(() => getWeatherInformation, fiveMinutesInMilliseconds);
+  }, [getWeatherInformation]);
 
   return (
     <CurrentLocalWeatherInformationContext.Provider
