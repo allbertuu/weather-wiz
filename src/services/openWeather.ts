@@ -44,11 +44,6 @@ interface IOpenWeatherData {
 
 export type IOpenWeatherResponse = IOpenWeatherData;
 
-interface IDevicePosition {
-  latitude: number;
-  longitude: number;
-}
-
 export const api = axios.create({
   baseURL: 'https://api.openweathermap.org/data/2.5/weather',
   params: {
@@ -61,7 +56,10 @@ export const api = axios.create({
 export const fetchWeatherInformation = async ({
   latitude,
   longitude,
-}: IDevicePosition) => {
+}: {
+  latitude: number;
+  longitude: number;
+}) => {
   try {
     const res = await api.get('/', {
       params: {
