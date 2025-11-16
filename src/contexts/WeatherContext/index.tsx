@@ -1,10 +1,18 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
-import { IWeatherContext, IWeatherProvider } from './types';
-import { getDevicePosition } from '../../utils';
 import {
   fetchWeatherInformation,
   IOpenWeatherResponse,
 } from '../../services/openWeather';
+import { getDevicePosition } from '../../utils';
+
+export interface IWeatherProvider {
+  children: React.ReactNode;
+}
+export interface IWeatherContext {
+  weatherData: IOpenWeatherResponse | null;
+  isGeolocationFound: boolean;
+  isLoadingWeatherInformation: boolean;
+}
 
 export const CurrentLocalWeatherInformationContext = createContext(
   {} as IWeatherContext,
