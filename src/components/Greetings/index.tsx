@@ -1,34 +1,35 @@
-import { CloudMoon, Moon, CloudSun, Sun } from 'phosphor-react';
-import { flexibleDayPeriod } from '../../utils';
+import { CloudMoon, Moon, CloudSun, Sun, Cloud } from 'phosphor-react';
 import styles from './styles.module.scss';
 
-const Greetings: React.FC<unknown> = () => {
+type dayPeriods = { name: string; title: string; icon: JSX.Element }[];
+
+const Greetings = ({ currentDayPeriod }: { currentDayPeriod: string }) => {
+  const dayPeriods: dayPeriods = [
+    { name: 'noite', title: 'Boa noite', icon: <CloudMoon /> },
+    { name: 'madrugada', title: 'Boa madrugada', icon: <Moon /> },
+    { name: 'manhã', title: 'Bom dia', icon: <CloudSun /> },
+    { name: 'tarde', title: 'Boa tarde', icon: <Sun /> },
+  ];
+
+  const currentPeriod = dayPeriods.find((period) =>
+    currentDayPeriod.toLowerCase().includes(period.name),
+  );
+
+  const isCurrentPeriodUnknown = currentPeriod === undefined;
+
+  if (isCurrentPeriodUnknown) {
+    return (
+      <div className={styles.container}>
+        <h1>Bem-vindo(a)</h1>
+        <Cloud />
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
-      {flexibleDayPeriod.includes('noite') && (
-        <>
-          <h1>Boa noite</h1>
-          <CloudMoon />
-        </>
-      )}
-      {flexibleDayPeriod.includes('madrugada') && (
-        <>
-          <h1>Boa madrugada</h1>
-          <Moon />
-        </>
-      )}
-      {flexibleDayPeriod.includes('manhã') && (
-        <>
-          <h1>Bom dia</h1>
-          <CloudSun />
-        </>
-      )}
-      {flexibleDayPeriod.includes('tarde') && (
-        <>
-          <h1>Boa tarde</h1>
-          <Sun />
-        </>
-      )}
+      <h1>{currentPeriod.title}</h1>
+      {currentPeriod.icon}
     </div>
   );
 };
