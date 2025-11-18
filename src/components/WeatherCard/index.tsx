@@ -7,15 +7,18 @@ import {
   Drop,
   SunHorizon,
 } from 'phosphor-react';
-import { useWeather } from '../../hooks';
 import {
   convertMetersPerSecondToKilometersPerHour,
   formatHour,
 } from '../../utils';
 import './styles.scss';
+import { IOpenWeatherResponse } from '../../services/openWeather';
 
-const WeatherCard = () => {
-  const { weatherData } = useWeather();
+const WeatherCard = ({
+  weatherData,
+}: {
+  weatherData: IOpenWeatherResponse | null;
+}) => {
   const isCurrentWeatherInformationEmpty = weatherData === null;
 
   if (isCurrentWeatherInformationEmpty) {

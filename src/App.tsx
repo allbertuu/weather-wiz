@@ -11,7 +11,8 @@ import {
 import { useWeather } from './hooks';
 
 function App() {
-  const { isGeolocationFound, isLoadingWeatherInformation } = useWeather();
+  const { isGeolocationFound, isLoadingWeatherInformation, weatherData } =
+    useWeather();
   const isDevicePositionUnknown = isGeolocationFound === false;
 
   useEffect(() => {
@@ -47,7 +48,7 @@ function App() {
         <GeolocationInfos />
       </header>
 
-      <WeatherCard />
+      <WeatherCard weatherData={weatherData} />
     </div>
   );
 }
