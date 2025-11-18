@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import { handlePeriodOfTheDayBodyStyle } from './utils';
-import './styles/App.scss';
 import {
   GeolocationInfos,
   Greetings,
@@ -9,6 +7,8 @@ import {
   WeatherCard,
 } from './components';
 import { useWeather } from './hooks';
+import './styles/App.scss';
+import { flexibleDayPeriod, handlePeriodOfTheDayBodyStyle } from './utils';
 
 function App() {
   const { isGeolocationFound, isLoadingWeatherInformation, weatherData } =
@@ -43,7 +43,7 @@ function App() {
       <SupportCreator />
 
       <header className="header">
-        <Greetings />
+        <Greetings currentDayPeriod={flexibleDayPeriod} />
 
         <GeolocationInfos />
       </header>
