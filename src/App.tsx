@@ -45,7 +45,11 @@ function App() {
       <header className="header">
         <Greetings currentDayPeriod={flexibleDayPeriod} />
 
-        <GeolocationInfos />
+        {weatherData ? (
+          <GeolocationInfos localName={weatherData.name} />
+        ) : (
+          <GeolocationInfos />
+        )}
       </header>
 
       <WeatherCard weatherData={weatherData} />
