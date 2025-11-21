@@ -25,10 +25,6 @@ const GeolocationInfos = ({ localName }: { localName?: string }) => {
 
   return (
     <p className={styles.container}>
-      {/* TODO: É possível obter a localização pelo Google Maps API, passando as
-        coordenadas.
-        https://developers.google.com/maps/documentation/geocoding/?hl=pt_BR#comecar
-       */}
       Você está em <strong>{local}</strong>, e são{' '}
       <time className={styles.hour}>{currentHour}</time>
     </p>
