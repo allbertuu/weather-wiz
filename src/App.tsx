@@ -46,7 +46,7 @@ function App() {
         <Greetings currentDayPeriod={flexibleDayPeriod} />
 
         {weatherData ? (
-          <GeolocationInfos localName={weatherData.name} />
+          <GeolocationInfos placeName={weatherData.name} />
         ) : (
           <GeolocationInfos />
         )}

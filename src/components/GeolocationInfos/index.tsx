@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { formatHour } from '../../utils';
 import styles from './styles.module.scss';
 
-const GeolocationInfos = ({ localName }: { localName?: string }) => {
+const GeolocationInfos = ({ placeName }: { placeName?: string }) => {
   // Formato: HH:MM
   const defaultHour = formatHour(new Date().getTime() / 1000);
   const [currentHour, setCurrentHour] = useState<string>(defaultHour);
 
-  const local = localName || 'algum lugar agradável';
+  const local = placeName || 'algum lugar agradável';
 
   const FIFTEEN_SECONDS_IN_MILLISECONDS = 15000;
 

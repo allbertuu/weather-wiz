@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import GeolocationInfos from '.';
 
-test('quando localName não é fornecido, exibe local padrão', () => {
+test('quando placeName não é fornecido, exibe local padrão', () => {
   render(<GeolocationInfos />);
 
   const strongElement = screen.getByText(/algum lugar agradável/i);
@@ -10,11 +10,11 @@ test('quando localName não é fornecido, exibe local padrão', () => {
   expect(strongElement.tagName).toBe('STRONG');
 });
 
-test('quando localName é fornecido, exibe o local correto', () => {
-  const testLocalName = 'São Paulo';
-  render(<GeolocationInfos localName={testLocalName} />);
+test('quando placeName é fornecido, exibe o local correto', () => {
+  const placeTest = 'São Paulo';
+  render(<GeolocationInfos placeName={placeTest} />);
 
-  const strongElement = screen.getByText(testLocalName);
+  const strongElement = screen.getByText(placeTest);
 
   expect(strongElement).toBeInTheDocument();
   expect(strongElement.tagName).toBe('STRONG');
