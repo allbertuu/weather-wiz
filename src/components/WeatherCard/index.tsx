@@ -34,10 +34,21 @@ const WeatherCard = ({
   );
   const sunriseHour = formatHour(weatherData.sys.sunrise);
   const sunsetHour = formatHour(weatherData.sys.sunset);
+  const lastUpdateDate = new Date(weatherData.dt * 1000);
+  const formattedLastUpdate = `
+    ${lastUpdateDate.toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+    })} às 
+    ${lastUpdateDate.toLocaleTimeString('pt-BR', {
+      hour: '2-digit',
+      minute: '2-digit',
+    })}`;
 
   return (
     <div className="weather-card">
       <h2>{weatherData.weather[0].description}</h2>
+      <p>Última atualização dos dados em: {formattedLastUpdate}</p>
       <ul>
         <li>
           <Thermometer size={22} />
